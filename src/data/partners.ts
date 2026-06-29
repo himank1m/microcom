@@ -12,5 +12,6 @@ export const partners = [
   "Canon",
   "Logitech",
   "TP-Link",
-  "Matrix"
+  "Matrix",
+  "And many more"
 ];

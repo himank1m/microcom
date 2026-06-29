@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/Button";
 
-const organizationTypes = ["Business / Enterprise", "Government Department", "Defence / Military", "Education", "Healthcare", "Banking & Finance", "Manufacturing", "Other"];
+const organizationTypes = ["Business / Enterprise", "Government Department", "Defence / Military", "Manufacturing", "Other"];
 const requirementTypes = ["Surveillance & Security", "Enterprise Networking", "Servers & Infrastructure", "Custom Software", "Managed IT Services", "AMC Support", "Multiple Requirements"];
 
 export function ContactForm() {
