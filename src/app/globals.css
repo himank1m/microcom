@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 42 35% 98%;
+  --foreground: 217 28% 12%;
+  --muted: 214 24% 94%;
+  --muted-foreground: 216 12% 43%;
+  --border: 214 24% 86%;
+  --card: 0 0% 100%;
+  --card-foreground: 217 28% 12%;
+  --primary: 215 42% 18%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 207 50% 43%;
+}
+
+.dark {
+  --background: 220 18% 11%;
+  --foreground: 210 22% 94%;
+  --muted: 218 16% 17%;
+  --muted-foreground: 213 12% 70%;
+  --border: 216 14% 25%;
+  --card: 220 17% 14%;
+  --card-foreground: 210 22% 94%;
+  --primary: 208 32% 82%;
+  --primary-foreground: 220 18% 11%;
+  --accent: 203 48% 58%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, hsl(var(--accent) / 0.08), transparent 34rem),
+    hsl(var(--background));
+  color: hsl(var(--foreground));
+  text-rendering: optimizeLegibility;
+}
+
+.dark body {
+  background:
+    radial-gradient(circle at top left, hsl(var(--accent) / 0.08), transparent 34rem),
+    hsl(var(--background));
+}
+
+::selection {
+  background: hsl(var(--accent) / 0.2);
+}
+
+.section {
+  padding-block: clamp(4rem, 8vw, 7rem);
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin-inline: auto;
+}
+
+.focus-ring {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus-ring:focus-visible {
+  outline-color: hsl(var(--accent));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
