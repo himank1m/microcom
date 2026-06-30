@@ -4,7 +4,11 @@ import { Button } from "@/components/ui/Button";
 
 export const metadata: Metadata = {
   title: "Thank You",
-  description: "Thank you for contacting Microware Communication."
+  description: "Thank you for contacting Microware Communication.",
+  robots: {
+    index: false,
+    follow: false
+  }
 };
 
 export default function ThankYouPage() {

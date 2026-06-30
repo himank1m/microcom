@@ -2,30 +2,56 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? `https://${process.env.NEXT_PUBLIC_SITE_URL.replace(/^https?:\/\//, "")}`
-  : process.env.VERCEL_URL
-    ? `https://${process.env.VERCEL_URL}`
-    : "https://microware-communication.vercel.app";
+import { absoluteUrl, baseUrl, defaultDescription, seoKeywords, structuredData } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(baseUrl),
   title: {
-    default: "Microware Communication | Enterprise IT Solutions in Jammu",
-    template: "%s | Microware Communication"
+    default: "Microware Communications | Enterprise IT Solutions in Jammu",
+    template: "%s | Microware Communications"
   },
-  description:
-    "Microware Communication delivers IT solutions, CCTV installation, enterprise networking, server solutions, custom software, and IT AMC services in Jammu.",
+  description: defaultDescription,
+  keywords: seoKeywords,
+  applicationName: "Microware Communications",
+  authors: [{ name: "Microware Communications" }],
+  creator: "Microware Communications",
+  publisher: "Microware Communications",
+  category: "Enterprise Technology Solutions",
+  alternates: {
+    canonical: "/"
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
+  },
   openGraph: {
-    title: "Microware Communication | Enterprise IT Solutions in Jammu",
-    description:
-      "Enterprise technology solutions built around reliability for organizations across Northern India.",
-    url: siteUrl,
-    siteName: "Microware Communication",
-    images: [{ url: "/images/enterprise-technology-hero.png", width: 1200, height: 900 }],
+    title: "Microware Communications | Enterprise IT Solutions in Jammu",
+    description: defaultDescription,
+    url: baseUrl,
+    siteName: "Microware Communications",
+    images: [
+      {
+        url: absoluteUrl("/images/enterprise-technology-hero.png"),
+        width: 1200,
+        height: 900,
+        alt: "Enterprise technology infrastructure by Microware Communications"
+      }
+    ],
     locale: "en_IN",
     type: "website"
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Microware Communications | Enterprise IT Solutions in Jammu",
+    description: defaultDescription,
+    images: [absoluteUrl("/images/enterprise-technology-hero.png")]
   }
 };
 
@@ -42,6 +68,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <Navbar />
         <main>{children}</main>
         <Footer />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c")
+          }}
+        />
       </body>
     </html>
   );
