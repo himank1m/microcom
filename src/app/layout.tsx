@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   creator: "Microware Communications",
   publisher: "Microware Communications",
   category: "Enterprise Technology Solutions",
+  verification: {
+    google: "WkY9FTJF3DXAJOOMpVyfsn0i1uAir0wtBltgCrq4Oo4"
+  },
   alternates: {
     canonical: "/"
   },
