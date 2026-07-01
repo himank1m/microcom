@@ -1,8 +1,6 @@
 import { site } from "@/lib/utils";
 
-export const baseUrl = process.env.NEXT_PUBLIC_SITE_URL
-  ? `https://${process.env.NEXT_PUBLIC_SITE_URL.replace(/^https?:\/\//, "")}`
-  : "https://microcom.vercel.app";
+export const baseUrl = "https://www.microwaremail.com";
 
 export const publicRoutes = [
   { path: "/", priority: 1 },
