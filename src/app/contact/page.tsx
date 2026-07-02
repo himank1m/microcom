@@ -6,9 +6,9 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { site } from "@/lib/utils";
 
 export const metadata: Metadata = {
-  title: "Contact Microware Communication",
+  title: "Contact Microware Communications",
   description:
-    "Contact Microware Communication in Jammu for IT solutions, CCTV installation, enterprise networking, server solutions, custom software, and IT AMC services.",
+    "Contact Microware Communications in Jammu for IT solutions, CCTV installation, enterprise networking, server solutions, custom software, and IT AMC services.",
   alternates: {
     canonical: "/contact"
   }

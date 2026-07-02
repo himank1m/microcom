@@ -13,7 +13,7 @@ export const publicRoutes = [
 
 export const seoKeywords = [
   "Microware Communications",
-  "Microware Communication Jammu",
+  "Microware Communications Jammu",
   "IT solutions Jammu",
   "enterprise IT solutions Jammu",
   "CCTV installation Jammu",

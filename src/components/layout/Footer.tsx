@@ -50,7 +50,7 @@ export function Footer() {
       </div>
       <div className="border-t border-border py-5">
         <div className="container text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Microware Communication. All rights reserved.
+          &copy; {new Date().getFullYear()} Microware Communications. All rights reserved.
         </div>
       </div>
     </footer>

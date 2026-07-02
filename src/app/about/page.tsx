@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Why Microware",
   description:
-    "Learn why organizations choose Microware Communication, an enterprise technology solutions partner based in Jammu with over 25 years of experience.",
+    "Learn why organizations choose Microware Communications, an enterprise technology solutions partner based in Jammu with over 25 years of experience.",
   alternates: {
     canonical: "/about"
   }
@@ -22,13 +22,13 @@ export default function AboutPage() {
             <SectionHeading
               eyebrow="About Microware"
               title="Why Organizations Choose Microware"
-              description="Microware Communication is an enterprise technology solutions partner based in Jammu, delivering reliable IT, surveillance, infrastructure, and software solutions for organizations across Northern India."
+              description="Microware Communications is an enterprise technology solutions partner based in Jammu, delivering reliable IT, surveillance, infrastructure, and software solutions for organizations across Northern India."
             />
           </Reveal>
           <Reveal>
             <div className="space-y-5 text-base leading-8 text-muted-foreground">
               <p>
-                For more than 25 years, Microware Communication has supported organizations that need dependable technology infrastructure and a professional service environment. The company is headquartered at 13/C Ext. Gandhi Nagar, Jammu, and works with clients across Northern India.
+                For more than 25 years, Microware Communications has supported organizations that need dependable technology infrastructure and a professional service environment. The company is headquartered at 13/C Ext. Gandhi Nagar, Jammu, and works with clients across Northern India.
               </p>
               <p>
                 The work spans enterprise IT, surveillance, networking, servers, software, managed services, and AMC support. The orientation is serious and practical: understand the environment, specify carefully, deploy with discipline, and remain available after installation.

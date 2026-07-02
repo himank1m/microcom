@@ -15,7 +15,7 @@ export function Hero() {
           </h1>
           <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
             From surveillance and enterprise networking to mission-critical infrastructure and custom software,
-            Microware Communication delivers technology solutions trusted by organizations for over 25 years.
+            Microware Communications delivers technology solutions trusted by organizations for over 25 years.
           </p>
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
             <Button href={`tel:${site.phone.replace(/\s/g, "")}`}>

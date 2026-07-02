@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const site = {
-  name: "Microware Communication",
+  name: "Microware Communications",
   tagline: "Look No Further",
   phone: "9419183356",
   email: "roopeshmangotra@microwaremail.com",

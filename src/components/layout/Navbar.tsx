@@ -29,7 +29,7 @@ export function Navbar() {
             MC
           </span>
           <span className="leading-tight">
-            <span className="block text-sm font-semibold text-foreground">Microware Communication</span>
+            <span className="block text-sm font-semibold text-foreground">Microware Communications</span>
             <span className="block text-xs text-muted-foreground">Look No Further</span>
           </span>
         </Link>
@@ -61,7 +61,7 @@ export function Navbar() {
           <a
             href={`tel:${site.phone.replace(/\s/g, "")}`}
             className="focus-ring inline-flex size-10 items-center justify-center rounded-md bg-primary text-primary-foreground"
-            aria-label="Call Microware Communication"
+            aria-label="Call Microware Communications"
           >
             <Phone className="size-4" aria-hidden />
           </a>

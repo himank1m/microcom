@@ -20,7 +20,7 @@ export function WhyChoose() {
           <SectionHeading
             eyebrow="Why organizations choose Microware"
             title="Calm, structured delivery for serious technology environments."
-            description="Microware Communication works with organizations that need reliable infrastructure, careful deployment, and a professional dealing environment from first conversation to long-term support."
+            description="Microware Communications works with organizations that need reliable infrastructure, careful deployment, and a professional dealing environment from first conversation to long-term support."
           />
         </Reveal>
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
