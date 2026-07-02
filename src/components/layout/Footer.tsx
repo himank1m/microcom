@@ -24,7 +24,6 @@ export function Footer() {
           <div className="mt-6 space-y-2 text-sm text-muted-foreground">
             <p>{site.phone}</p>
             <p>{site.email}</p>
-            <p>{site.address}</p>
           </div>
         </div>
         <div>
@@ -49,8 +48,9 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-5">
-        <div className="container text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} Microware Communications. All rights reserved.
+        <div className="container flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+          <p>&copy; {new Date().getFullYear()} Microware Communications. All rights reserved.</p>
+          <p>Made with love by Himank Magotra.</p>
         </div>
       </div>
     </footer>
