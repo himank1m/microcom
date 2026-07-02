@@ -7,7 +7,7 @@ export function SolutionsGrid({ compact = false }: { compact?: boolean }) {
   const items = compact ? solutions.slice(0, 6) : solutions;
 
   return (
-    <section className="section bg-muted/35">
+    <section className="section bg-[linear-gradient(180deg,hsl(var(--muted)/0.55),hsl(var(--background)))]">
       <div className="container">
         <Reveal>
           <SectionHeading

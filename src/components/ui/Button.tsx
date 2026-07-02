@@ -19,8 +19,10 @@ type NativeButtonProps = CommonProps &
   };
 
 const styles = {
-  primary: "bg-primary text-primary-foreground shadow-subtle hover:-translate-y-0.5 hover:shadow-lg dark:shadow-subtle-dark",
-  secondary: "border border-border bg-card text-foreground hover:-translate-y-0.5 hover:border-accent/50",
+  primary:
+    "bg-accent text-white shadow-[0_14px_30px_hsl(var(--accent)/0.26)] hover:-translate-y-0.5 hover:bg-accent/92 hover:shadow-[0_18px_36px_hsl(var(--accent)/0.32)]",
+  secondary:
+    "border border-primary/25 bg-card text-primary hover:-translate-y-0.5 hover:border-accent/60 hover:bg-accent/5 dark:border-white/18 dark:text-foreground dark:hover:bg-white/5",
   ghost: "text-foreground hover:bg-muted"
 };
 

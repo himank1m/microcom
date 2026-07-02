@@ -3,29 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: 42 35% 98%;
-  --foreground: 217 28% 12%;
-  --muted: 214 24% 94%;
-  --muted-foreground: 216 12% 43%;
-  --border: 214 24% 86%;
+  --background: 210 33% 98%;
+  --foreground: 216 60% 12%;
+  --muted: 210 25% 94%;
+  --muted-foreground: 216 18% 42%;
+  --border: 214 28% 86%;
   --card: 0 0% 100%;
-  --card-foreground: 217 28% 12%;
-  --primary: 215 42% 18%;
+  --card-foreground: 216 60% 12%;
+  --primary: 216 72% 14%;
   --primary-foreground: 0 0% 100%;
-  --accent: 207 50% 43%;
+  --accent: 27 96% 50%;
 }
 
 .dark {
-  --background: 220 18% 11%;
-  --foreground: 210 22% 94%;
-  --muted: 218 16% 17%;
-  --muted-foreground: 213 12% 70%;
-  --border: 216 14% 25%;
-  --card: 220 17% 14%;
-  --card-foreground: 210 22% 94%;
-  --primary: 208 32% 82%;
-  --primary-foreground: 220 18% 11%;
-  --accent: 203 48% 58%;
+  --background: 216 45% 9%;
+  --foreground: 210 30% 96%;
+  --muted: 217 35% 15%;
+  --muted-foreground: 212 15% 72%;
+  --border: 216 24% 24%;
+  --card: 216 40% 12%;
+  --card-foreground: 210 30% 96%;
+  --primary: 27 96% 50%;
+  --primary-foreground: 216 72% 12%;
+  --accent: 28 100% 54%;
 }
 
 * {
@@ -39,7 +39,8 @@ html {
 body {
   min-height: 100vh;
   background:
-    radial-gradient(circle at top left, hsl(var(--accent) / 0.08), transparent 34rem),
+    linear-gradient(135deg, hsl(var(--background)) 0%, hsl(210 32% 96%) 48%, hsl(215 42% 93%) 100%),
+    radial-gradient(circle at top left, hsl(var(--accent) / 0.1), transparent 34rem),
     hsl(var(--background));
   color: hsl(var(--foreground));
   text-rendering: optimizeLegibility;
@@ -47,7 +48,8 @@ body {
 
 .dark body {
   background:
-    radial-gradient(circle at top left, hsl(var(--accent) / 0.08), transparent 34rem),
+    linear-gradient(135deg, hsl(216 48% 8%) 0%, hsl(216 42% 11%) 52%, hsl(214 38% 15%) 100%),
+    radial-gradient(circle at top left, hsl(var(--accent) / 0.11), transparent 34rem),
     hsl(var(--background));
 }
 
