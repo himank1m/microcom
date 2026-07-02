@@ -31,10 +31,10 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         >
           <span className="relative block leading-none">
-            <span className="absolute left-1/2 top-[-13px] flex -translate-x-1/2 flex-col items-center gap-0.5 text-orange-500">
-              <span className="h-2 w-5 rounded-t-full border-x-2 border-t-2 border-current" />
-              <span className="h-1.5 w-3.5 rounded-t-full border-x-2 border-t-2 border-current" />
-              <span className="size-1.5 rounded-full bg-current" />
+            <span className="absolute left-1/2 top-[-9px] flex -translate-x-1/2 flex-col items-center gap-px text-orange-500/90">
+              <span className="h-1.5 w-4 rounded-t-full border-x border-t border-current" />
+              <span className="h-1 w-2.5 rounded-t-full border-x border-t border-current" />
+              <span className="size-1 rounded-full bg-current" />
             </span>
             <span className="block text-[1.55rem] font-black tracking-tight sm:text-[1.85rem]">
               <span className="text-slate-100">Micro</span>

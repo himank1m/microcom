@@ -19,10 +19,10 @@ export function Footer() {
         <div>
           <div className="inline-flex flex-col leading-none">
             <span className="relative inline-block text-[1.9rem] font-black tracking-tight">
-              <span className="absolute left-1/2 top-[-14px] flex -translate-x-1/2 flex-col items-center gap-0.5 text-orange-500">
-                <span className="h-2 w-5 rounded-t-full border-x-2 border-t-2 border-current" />
-                <span className="h-1.5 w-3.5 rounded-t-full border-x-2 border-t-2 border-current" />
-                <span className="size-1.5 rounded-full bg-current" />
+              <span className="absolute left-1/2 top-[-10px] flex -translate-x-1/2 flex-col items-center gap-px text-orange-500/90">
+                <span className="h-1.5 w-4 rounded-t-full border-x border-t border-current" />
+                <span className="h-1 w-2.5 rounded-t-full border-x border-t border-current" />
+                <span className="size-1 rounded-full bg-current" />
               </span>
               <span className="text-white">Micro</span>
               <span className="text-orange-500">ware</span>
