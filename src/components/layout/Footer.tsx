@@ -18,14 +18,14 @@ export function Footer() {
       <div className="h-1 bg-gradient-to-r from-accent via-orange-400 to-slate-300" />
       <div className="container grid gap-10 py-14 md:grid-cols-[1.3fr_0.7fr_1fr]">
         <div>
-          <div className="flex items-center gap-4">
-            <span className="relative flex size-16 shrink-0 overflow-hidden rounded-md border border-white/15 bg-white shadow-lg">
-              <Image src="/images/microware-logo.png" alt="Microware Communications logo" fill sizes="64px" className="object-contain p-1.5" />
-            </span>
-            <span>
-              <span className="block text-lg font-semibold text-white">{site.name}</span>
-              <span className="block text-sm font-medium text-accent">{site.tagline}</span>
-            </span>
+          <div className="flex items-center">
+            <Image
+              src="/images/microware-wordmark.svg"
+              alt={`${site.name} - ${site.tagline}`}
+              width={280}
+              height={81}
+              className="h-auto w-[240px] sm:w-[280px]"
+            />
           </div>
           <p className="mt-5 max-w-sm text-sm leading-6 text-slate-300">
             Enterprise technology solutions built around reliability.

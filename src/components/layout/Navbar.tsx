@@ -23,23 +23,17 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-primary/10 bg-white/90 shadow-[0_8px_30px_rgba(9,30,58,0.06)] backdrop-blur-xl dark:bg-background/88">
+    <header className="sticky top-0 z-50 border-b border-orange-500/25 bg-[#070707]/95 shadow-[0_10px_34px_rgba(0,0,0,0.22)] backdrop-blur-xl">
       <nav className="container flex min-h-20 items-center justify-between gap-4" aria-label="Main navigation">
-        <Link href="/" className="focus-ring flex items-center gap-3 rounded-md" onClick={() => setOpen(false)}>
-          <span className="relative flex size-12 shrink-0 items-center justify-center overflow-hidden rounded-md border border-primary/10 bg-white shadow-sm">
-            <Image
-              src="/images/microware-logo.png"
-              alt="Microware Communications logo"
-              fill
-              sizes="48px"
-              className="object-contain p-1"
-              priority
-            />
-          </span>
-          <span className="leading-tight">
-            <span className="block text-sm font-semibold text-primary">Microware Communications</span>
-            <span className="block text-xs font-medium text-accent">Look No Further</span>
-          </span>
+        <Link href="/" className="focus-ring flex items-center rounded-md" onClick={() => setOpen(false)}>
+          <Image
+            src="/images/microware-wordmark.svg"
+            alt="Microware Communications - Look No Further"
+            width={260}
+            height={75}
+            className="h-auto w-[190px] sm:w-[230px] lg:w-[260px]"
+            priority
+          />
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
@@ -49,7 +43,8 @@ export function Navbar() {
               href={item.href}
               className={cn(
                 "focus-ring rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-primary",
-                pathname === item.href && "bg-accent/8 text-primary"
+                "text-slate-300 hover:bg-white/8 hover:text-white",
+                pathname === item.href && "bg-orange-500/15 text-white"
               )}
             >
               {item.label}
@@ -76,7 +71,7 @@ export function Navbar() {
           <ThemeToggle />
           <button
             type="button"
-            className="focus-ring inline-flex size-10 items-center justify-center rounded-md border border-primary/15 bg-white text-primary dark:bg-card dark:text-foreground"
+            className="focus-ring inline-flex size-10 items-center justify-center rounded-md border border-white/15 bg-white/8 text-white"
             onClick={() => setOpen((value) => !value)}
             aria-label="Toggle menu"
             aria-expanded={open}
@@ -87,7 +82,7 @@ export function Navbar() {
       </nav>
 
       {open ? (
-        <div className="border-t border-primary/10 bg-white lg:hidden dark:bg-background">
+        <div className="border-t border-white/10 bg-[#070707] lg:hidden">
           <div className="container grid gap-1 py-4">
             {navItems.map((item) => (
               <Link
@@ -96,7 +91,8 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className={cn(
                   "focus-ring rounded-md px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-primary",
-                  pathname === item.href && "bg-accent/8 text-primary"
+                  "text-slate-300 hover:bg-white/8 hover:text-white",
+                  pathname === item.href && "bg-orange-500/15 text-white"
                 )}
               >
                 {item.label}
