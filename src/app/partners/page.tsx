@@ -7,7 +7,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Technology Partners",
   description:
-    "Microware Communication works with technology brands including HP, Dell, Lenovo, Microsoft, Cisco, Hikvision, CP Plus, Epson, Canon, Logitech, TP-Link, and Matrix."
+    "Microware Communication works with technology brands including HP, Dell, Lenovo, Microsoft, Cisco, Hikvision, CP Plus, Epson, Canon, Logitech, TP-Link, and Matrix.",
+  alternates: {
+    canonical: "/partners"
+  }
 };
 
 export default function PartnersPage() {

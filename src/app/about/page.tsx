@@ -7,7 +7,10 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Why Microware",
   description:
-    "Learn why organizations choose Microware Communication, an enterprise technology solutions partner based in Jammu with over 25 years of experience."
+    "Learn why organizations choose Microware Communication, an enterprise technology solutions partner based in Jammu with over 25 years of experience.",
+  alternates: {
+    canonical: "/about"
+  }
 };
 
 export default function AboutPage() {

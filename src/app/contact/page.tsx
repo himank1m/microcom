@@ -8,7 +8,10 @@ import { site } from "@/lib/utils";
 export const metadata: Metadata = {
   title: "Contact Microware Communication",
   description:
-    "Contact Microware Communication in Jammu for IT solutions, CCTV installation, enterprise networking, server solutions, custom software, and IT AMC services."
+    "Contact Microware Communication in Jammu for IT solutions, CCTV installation, enterprise networking, server solutions, custom software, and IT AMC services.",
+  alternates: {
+    canonical: "/contact"
+  }
 };
 
 const contactItems = [
