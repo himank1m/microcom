@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { site } from "@/lib/utils";
 import { solutions } from "@/data/solutions";
 
@@ -18,14 +17,20 @@ export function Footer() {
       <div className="h-1 bg-gradient-to-r from-accent via-orange-400 to-slate-300" />
       <div className="container grid gap-10 py-14 md:grid-cols-[1.3fr_0.7fr_1fr]">
         <div>
-          <div className="flex items-center">
-            <Image
-              src="/images/microware-wordmark.svg"
-              alt={`${site.name} - ${site.tagline}`}
-              width={280}
-              height={81}
-              className="h-auto w-[240px] sm:w-[280px]"
-            />
+          <div className="inline-flex flex-col leading-none">
+            <span className="relative inline-block text-[1.9rem] font-black tracking-tight">
+              <span className="absolute left-1/2 top-[-14px] flex -translate-x-1/2 flex-col items-center gap-0.5 text-orange-500">
+                <span className="h-2 w-5 rounded-t-full border-x-2 border-t-2 border-current" />
+                <span className="h-1.5 w-3.5 rounded-t-full border-x-2 border-t-2 border-current" />
+                <span className="size-1.5 rounded-full bg-current" />
+              </span>
+              <span className="text-white">Micro</span>
+              <span className="text-orange-500">ware</span>
+            </span>
+            <span className="mt-1 text-[0.65rem] font-bold uppercase tracking-[0.3em] text-slate-300">
+              Communications
+            </span>
+            <span className="mt-2 text-sm font-semibold text-accent">{site.tagline}</span>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-6 text-slate-300">
             Enterprise technology solutions built around reliability.

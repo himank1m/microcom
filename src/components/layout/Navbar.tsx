@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { Menu, Phone, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -25,15 +24,29 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-orange-500/25 bg-[#070707]/95 shadow-[0_10px_34px_rgba(0,0,0,0.22)] backdrop-blur-xl">
       <nav className="container flex min-h-20 items-center justify-between gap-4" aria-label="Main navigation">
-        <Link href="/" className="focus-ring flex items-center rounded-md" onClick={() => setOpen(false)}>
-          <Image
-            src="/images/microware-wordmark.svg"
-            alt="Microware Communications - Look No Further"
-            width={260}
-            height={75}
-            className="h-auto w-[190px] sm:w-[230px] lg:w-[260px]"
-            priority
-          />
+        <Link
+          href="/"
+          className="focus-ring flex min-w-[172px] items-center rounded-md py-2"
+          aria-label="Microware Communications - Look No Further"
+          onClick={() => setOpen(false)}
+        >
+          <span className="relative block leading-none">
+            <span className="absolute left-1/2 top-[-13px] flex -translate-x-1/2 flex-col items-center gap-0.5 text-orange-500">
+              <span className="h-2 w-5 rounded-t-full border-x-2 border-t-2 border-current" />
+              <span className="h-1.5 w-3.5 rounded-t-full border-x-2 border-t-2 border-current" />
+              <span className="size-1.5 rounded-full bg-current" />
+            </span>
+            <span className="block text-[1.55rem] font-black tracking-tight sm:text-[1.85rem]">
+              <span className="text-slate-100">Micro</span>
+              <span className="text-orange-500">ware</span>
+            </span>
+            <span className="mt-0.5 block text-[0.58rem] font-bold uppercase tracking-[0.28em] text-slate-300 sm:text-[0.64rem]">
+              Communications
+            </span>
+            <span className="mt-1 block text-[0.7rem] font-semibold text-orange-500 sm:text-xs">
+              Look No Further
+            </span>
+          </span>
         </Link>
 
         <div className="hidden items-center gap-1 lg:flex">
