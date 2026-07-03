@@ -4,27 +4,27 @@
 
 :root {
   --background: 0 0% 99%;
-  --foreground: 220 22% 8%;
+  --foreground: 217 80% 12%;
   --muted: 220 14% 95%;
-  --muted-foreground: 220 9% 42%;
-  --border: 220 13% 88%;
+  --muted-foreground: 216 24% 42%;
+  --border: 213 45% 88%;
   --card: 0 0% 100%;
-  --card-foreground: 220 22% 8%;
+  --card-foreground: 217 80% 12%;
   --primary: 213 100% 42%;
   --primary-foreground: 0 0% 100%;
-  --accent: 355 82% 50%;
+  --accent: 213 100% 42%;
 }
 
 .dark {
   --background: 0 0% 3%;
-  --foreground: 210 30% 96%;
-  --muted: 220 8% 10%;
-  --muted-foreground: 220 9% 68%;
-  --border: 220 8% 18%;
+  --foreground: 355 42% 84%;
+  --muted: 0 0% 9%;
+  --muted-foreground: 355 18% 62%;
+  --border: 355 24% 18%;
   --card: 220 8% 7%;
-  --card-foreground: 210 30% 96%;
-  --primary: 211 100% 61%;
-  --primary-foreground: 0 0% 100%;
+  --card-foreground: 355 42% 84%;
+  --primary: 355 86% 58%;
+  --primary-foreground: 0 0% 3%;
   --accent: 355 86% 58%;
 }
 
@@ -108,7 +108,7 @@ p {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, 0.2) 44%, transparent 62%);
+  background: linear-gradient(115deg, transparent 20%, hsl(var(--primary) / 0.2) 44%, transparent 62%);
   mix-blend-mode: screen;
   opacity: 0.55;
   transform: translateX(-120%) skewX(-10deg);

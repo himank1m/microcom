@@ -23,7 +23,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/80 bg-white/82 shadow-[0_1px_0_rgba(0,0,0,0.03)] backdrop-blur-xl dark:bg-black/82 dark:shadow-[0_1px_0_rgba(255,255,255,0.04)]">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-white/82 shadow-[0_1px_0_rgba(0,0,0,0.03)] backdrop-blur-xl dark:bg-black/82 dark:shadow-[0_1px_0_rgba(244,63,94,0.1)]">
       <nav className="container flex min-h-20 items-center justify-between gap-4" aria-label="Main navigation">
         <Link
           href="/"
@@ -33,7 +33,7 @@ export function Navbar() {
         >
           <span className="relative inline-flex flex-col leading-none">
             <span className="relative inline-flex items-baseline text-[1.45rem] font-semibold tracking-[-0.035em] sm:text-[1.65rem]">
-              <span className="absolute left-[4.38rem] top-[-0.52rem] hidden -translate-x-1/2 text-red-500/90 transition duration-500 group-hover:-translate-y-0.5 group-hover:text-red-500 sm:block">
+              <span className="absolute left-[4.38rem] top-[-0.52rem] hidden -translate-x-1/2 text-primary/90 transition duration-500 group-hover:-translate-y-0.5 group-hover:text-primary sm:block">
                 <span className="relative block h-3.5 w-5">
                   <span className="absolute inset-x-0 top-0 mx-auto h-2.5 w-5 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
                   <span className="absolute inset-x-0 top-1.5 mx-auto h-1.5 w-3 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
@@ -46,7 +46,7 @@ export function Navbar() {
             <span className="mt-1 text-[0.58rem] font-medium uppercase tracking-[0.22em] text-muted-foreground sm:text-[0.62rem]">
               Communications
             </span>
-            <span className="mt-1 text-[0.55rem] font-medium tracking-[0.08em] text-red-500/90 sm:text-[0.6rem]">
+            <span className="mt-1 text-[0.55rem] font-medium tracking-[0.08em] text-primary/90 sm:text-[0.6rem]">
               Secure. Connect. Support.
             </span>
           </span>
@@ -59,7 +59,7 @@ export function Navbar() {
               href={item.href}
               className={cn(
                 "focus-ring relative rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground",
-                pathname === item.href && "text-primary dark:text-white"
+                pathname === item.href && "text-primary"
               )}
             >
               {pathname === item.href ? (
@@ -86,7 +86,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 lg:hidden">
           <a
             href={`tel:${site.phone.replace(/\s/g, "")}`}
-            className="focus-ring inline-flex size-10 items-center justify-center rounded-md bg-primary text-white shadow-[0_10px_24px_hsl(var(--primary)/0.22)]"
+            className="focus-ring inline-flex size-10 items-center justify-center rounded-md bg-primary text-primary-foreground shadow-[0_10px_24px_hsl(var(--primary)/0.22)]"
             aria-label="Call Microware Communications"
           >
             <Phone className="size-4" aria-hidden />
@@ -126,7 +126,7 @@ export function Navbar() {
                   onClick={() => setOpen(false)}
                   className={cn(
                     "focus-ring block rounded-md px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
-                    pathname === item.href && "bg-primary/10 text-primary dark:text-white"
+                    pathname === item.href && "bg-primary/10 text-primary"
                   )}
                 >
                   {item.label}

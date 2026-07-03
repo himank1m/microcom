@@ -20,9 +20,9 @@ type NativeButtonProps = CommonProps &
 
 const styles = {
   primary:
-    "bg-primary text-white shadow-none hover:-translate-y-px hover:bg-primary/90 active:translate-y-0",
+    "bg-primary text-primary-foreground shadow-none hover:-translate-y-px hover:bg-primary/90 active:translate-y-0",
   secondary:
-    "border border-border bg-card text-foreground hover:-translate-y-px hover:border-primary/35 hover:bg-muted active:translate-y-0 dark:border-white/18 dark:text-foreground dark:hover:bg-white/5",
+    "border border-border bg-card text-foreground hover:-translate-y-px hover:border-primary/35 hover:bg-muted active:translate-y-0 dark:border-primary/20 dark:text-foreground dark:hover:bg-primary/10",
   ghost: "text-foreground hover:bg-muted active:scale-[0.99]"
 };
 
