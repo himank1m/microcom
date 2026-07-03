@@ -46,6 +46,9 @@ export function Navbar() {
             <span className="mt-1 text-[0.58rem] font-medium uppercase tracking-[0.22em] text-muted-foreground sm:text-[0.62rem]">
               Communications
             </span>
+            <span className="mt-1 text-[0.55rem] font-medium tracking-[0.08em] text-red-500/90 sm:text-[0.6rem]">
+              Secure. Connect. Support.
+            </span>
           </span>
         </Link>
 
