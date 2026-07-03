@@ -6,16 +6,16 @@ import { site } from "@/lib/utils";
 export function FinalCTA() {
   return (
     <section className="section border-y border-border bg-muted text-foreground dark:bg-black">
-      <div className="container">
+      <div className="container max-w-4xl text-center">
         <Reveal>
-          <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
+          <div>
             <div>
-              <p className="text-sm font-medium opacity-75">Ready to discuss a requirement?</p>
-              <h2 className="mt-3 max-w-3xl text-balance text-3xl font-semibold leading-tight sm:text-4xl">
+              <p className="text-sm font-medium text-muted-foreground">Ready to discuss a requirement?</p>
+              <h2 className="mx-auto mt-3 max-w-3xl text-balance text-3xl font-semibold leading-tight sm:text-4xl">
                 Speak with Microware about a reliable technology plan for your organization.
               </h2>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
               <Button href={`tel:${site.phone.replace(/\s/g, "")}`}>
                 <Phone className="size-4" aria-hidden />
                 Call Us

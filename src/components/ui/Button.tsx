@@ -20,15 +20,15 @@ type NativeButtonProps = CommonProps &
 
 const styles = {
   primary:
-    "bg-primary text-white shadow-[0_14px_30px_hsl(var(--primary)/0.18)] hover:-translate-y-0.5 hover:bg-primary/92 hover:shadow-[0_18px_36px_hsl(var(--primary)/0.24)]",
+    "bg-primary text-white shadow-none hover:bg-primary/90",
   secondary:
-    "border border-border bg-card text-foreground hover:-translate-y-0.5 hover:border-primary/45 hover:bg-muted dark:border-white/18 dark:text-foreground dark:hover:bg-white/5",
+    "border border-border bg-card text-foreground hover:border-primary/35 hover:bg-muted dark:border-white/18 dark:text-foreground dark:hover:bg-white/5",
   ghost: "text-foreground hover:bg-muted"
 };
 
 export function Button({ variant = "primary", className, children, ...props }: LinkProps | NativeButtonProps) {
   const classes = cn(
-    "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-md px-5 py-2.5 text-sm font-medium transition duration-200",
+    "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition duration-200",
     styles[variant],
     className
   );

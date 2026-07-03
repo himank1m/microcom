@@ -52,11 +52,11 @@ body {
 }
 
 .section {
-  padding-block: clamp(4rem, 8vw, 7rem);
+  padding-block: clamp(5rem, 9vw, 8rem);
 }
 
 .container {
-  width: min(1120px, calc(100% - 2rem));
+  width: min(1040px, calc(100% - 2rem));
   margin-inline: auto;
 }
 
