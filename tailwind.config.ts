@@ -23,7 +23,17 @@ const config: Config = {
         "subtle-dark": "0 18px 60px rgba(0, 0, 0, 0.28)"
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "Inter", "system-ui", "sans-serif"]
+        sans: [
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "\"SF Pro Text\"",
+          "\"SF Pro Display\"",
+          "\"Segoe UI\"",
+          "Roboto",
+          "Helvetica",
+          "Arial",
+          "sans-serif"
+        ]
       }
     }
   },

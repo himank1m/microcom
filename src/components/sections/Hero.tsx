@@ -30,14 +30,14 @@ export function Hero() {
           </div>
         </Reveal>
         <Reveal className="w-full">
-          <div className="relative mx-auto aspect-[16/8] max-w-5xl overflow-hidden rounded-lg bg-muted">
+          <div className="group relative mx-auto aspect-[16/8] max-w-5xl overflow-hidden rounded-lg bg-muted">
             <Image
               src="/images/enterprise-technology-hero.png"
               alt="Abstract enterprise infrastructure composition representing surveillance, networking, servers, displays, and software systems"
               fill
               priority
               sizes="(min-width: 1024px) 52vw, 100vw"
-              className="object-cover"
+              className="object-cover transition duration-700 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover:scale-[1.015]"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/10 via-transparent to-transparent" />
           </div>
