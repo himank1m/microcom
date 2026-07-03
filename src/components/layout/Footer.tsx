@@ -17,17 +17,18 @@ export function Footer() {
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       <div className="container grid gap-10 py-14 md:grid-cols-[1.3fr_0.7fr_1fr]">
         <div>
-          <div className="inline-flex flex-col leading-none">
-            <span className="relative inline-block text-[1.9rem] font-black tracking-tight">
-              <span className="absolute left-1/2 top-[-10px] flex -translate-x-1/2 flex-col items-center gap-px text-red-500/90">
-                <span className="h-1.5 w-4 rounded-t-full border-x border-t border-current" />
-                <span className="h-1 w-2.5 rounded-t-full border-x border-t border-current" />
-                <span className="size-1 rounded-full bg-current" />
+          <div className="inline-flex flex-col">
+            <span className="relative inline-flex items-baseline text-[1.8rem] font-semibold leading-none tracking-[-0.035em]">
+              <span className="absolute left-[4.72rem] top-[-0.45rem] -translate-x-1/2 text-red-500/85">
+                <span className="relative block h-2.5 w-4">
+                  <span className="absolute inset-x-0 top-0 mx-auto h-2 w-3.5 rounded-t-full border-x border-t border-current" />
+                  <span className="absolute inset-x-0 bottom-0 mx-auto size-1 rounded-full bg-current" />
+                </span>
               </span>
               <span className="text-foreground dark:text-white">Micro</span>
-              <span className="text-blue-400">ware</span>
+              <span className="text-primary">ware</span>
             </span>
-            <span className="mt-1 text-[0.65rem] font-bold uppercase tracking-[0.3em] text-muted-foreground">
+            <span className="mt-2 text-[0.65rem] font-medium uppercase tracking-[0.24em] text-muted-foreground">
               Communications
             </span>
             <span className="mt-2 text-sm font-semibold text-accent">{site.tagline}</span>
