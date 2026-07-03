@@ -3,29 +3,29 @@
 @tailwind utilities;
 
 :root {
-  --background: 210 33% 98%;
-  --foreground: 216 60% 12%;
-  --muted: 210 25% 94%;
-  --muted-foreground: 216 18% 42%;
-  --border: 214 28% 86%;
+  --background: 210 35% 98%;
+  --foreground: 220 68% 9%;
+  --muted: 214 28% 94%;
+  --muted-foreground: 220 18% 39%;
+  --border: 214 30% 86%;
   --card: 0 0% 100%;
-  --card-foreground: 216 60% 12%;
-  --primary: 216 72% 14%;
+  --card-foreground: 220 68% 9%;
+  --primary: 217 82% 30%;
   --primary-foreground: 0 0% 100%;
-  --accent: 27 96% 50%;
+  --accent: 355 82% 50%;
 }
 
 .dark {
-  --background: 216 45% 9%;
+  --background: 222 45% 6%;
   --foreground: 210 30% 96%;
-  --muted: 217 35% 15%;
+  --muted: 221 36% 13%;
   --muted-foreground: 212 15% 72%;
-  --border: 216 24% 24%;
-  --card: 216 40% 12%;
+  --border: 220 24% 22%;
+  --card: 222 38% 10%;
   --card-foreground: 210 30% 96%;
-  --primary: 27 96% 50%;
-  --primary-foreground: 216 72% 12%;
-  --accent: 28 100% 54%;
+  --primary: 214 92% 58%;
+  --primary-foreground: 0 0% 100%;
+  --accent: 355 86% 58%;
 }
 
 * {
@@ -39,8 +39,9 @@ html {
 body {
   min-height: 100vh;
   background:
-    linear-gradient(135deg, hsl(var(--background)) 0%, hsl(210 32% 96%) 48%, hsl(215 42% 93%) 100%),
-    radial-gradient(circle at top left, hsl(var(--accent) / 0.1), transparent 34rem),
+    linear-gradient(135deg, hsl(var(--background)) 0%, hsl(214 34% 96%) 48%, hsl(216 46% 93%) 100%),
+    radial-gradient(circle at top left, hsl(var(--primary) / 0.12), transparent 32rem),
+    radial-gradient(circle at top right, hsl(var(--accent) / 0.08), transparent 28rem),
     hsl(var(--background));
   color: hsl(var(--foreground));
   text-rendering: optimizeLegibility;
@@ -48,8 +49,9 @@ body {
 
 .dark body {
   background:
-    linear-gradient(135deg, hsl(216 48% 8%) 0%, hsl(216 42% 11%) 52%, hsl(214 38% 15%) 100%),
-    radial-gradient(circle at top left, hsl(var(--accent) / 0.11), transparent 34rem),
+    linear-gradient(135deg, hsl(222 48% 5%) 0%, hsl(221 44% 8%) 52%, hsl(218 40% 12%) 100%),
+    radial-gradient(circle at top left, hsl(var(--primary) / 0.18), transparent 34rem),
+    radial-gradient(circle at top right, hsl(var(--accent) / 0.11), transparent 28rem),
     hsl(var(--background));
 }
 

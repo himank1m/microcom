@@ -14,18 +14,18 @@ const quickLinks = [
 export function Footer() {
   return (
     <footer className="border-t border-primary/20 bg-primary text-white">
-      <div className="h-1 bg-gradient-to-r from-accent via-orange-400 to-slate-300" />
+      <div className="h-1 bg-gradient-to-r from-accent via-blue-500 to-slate-300" />
       <div className="container grid gap-10 py-14 md:grid-cols-[1.3fr_0.7fr_1fr]">
         <div>
           <div className="inline-flex flex-col leading-none">
             <span className="relative inline-block text-[1.9rem] font-black tracking-tight">
-              <span className="absolute left-1/2 top-[-10px] flex -translate-x-1/2 flex-col items-center gap-px text-orange-500/90">
+              <span className="absolute left-1/2 top-[-10px] flex -translate-x-1/2 flex-col items-center gap-px text-red-500/90">
                 <span className="h-1.5 w-4 rounded-t-full border-x border-t border-current" />
                 <span className="h-1 w-2.5 rounded-t-full border-x border-t border-current" />
                 <span className="size-1 rounded-full bg-current" />
               </span>
               <span className="text-white">Micro</span>
-              <span className="text-orange-500">ware</span>
+              <span className="text-blue-400">ware</span>
             </span>
             <span className="mt-1 text-[0.65rem] font-bold uppercase tracking-[0.3em] text-slate-300">
               Communications

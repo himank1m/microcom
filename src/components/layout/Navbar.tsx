@@ -22,7 +22,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-orange-500/25 bg-[#070707]/95 shadow-[0_10px_34px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-red-500/25 bg-[#070707]/95 shadow-[0_10px_34px_rgba(0,0,0,0.22)] backdrop-blur-xl">
       <nav className="container flex min-h-20 items-center justify-between gap-4" aria-label="Main navigation">
         <Link
           href="/"
@@ -31,19 +31,19 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         >
           <span className="relative block leading-none">
-            <span className="absolute left-1/2 top-[-9px] flex -translate-x-1/2 flex-col items-center gap-px text-orange-500/90">
+            <span className="absolute left-1/2 top-[-9px] flex -translate-x-1/2 flex-col items-center gap-px text-red-500/90">
               <span className="h-1.5 w-4 rounded-t-full border-x border-t border-current" />
               <span className="h-1 w-2.5 rounded-t-full border-x border-t border-current" />
               <span className="size-1 rounded-full bg-current" />
             </span>
             <span className="block text-[1.55rem] font-black tracking-tight sm:text-[1.85rem]">
               <span className="text-slate-100">Micro</span>
-              <span className="text-orange-500">ware</span>
+              <span className="text-blue-400">ware</span>
             </span>
             <span className="mt-0.5 block text-[0.58rem] font-bold uppercase tracking-[0.28em] text-slate-300 sm:text-[0.64rem]">
               Communications
             </span>
-            <span className="mt-1 block text-[0.7rem] font-semibold text-orange-500 sm:text-xs">
+            <span className="mt-1 block text-[0.7rem] font-semibold text-red-500 sm:text-xs">
               Look No Further
             </span>
           </span>
@@ -57,7 +57,7 @@ export function Navbar() {
               className={cn(
                 "focus-ring rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-primary",
                 "text-slate-300 hover:bg-white/8 hover:text-white",
-                pathname === item.href && "bg-orange-500/15 text-white"
+                pathname === item.href && "bg-blue-500/15 text-white"
               )}
             >
               {item.label}
@@ -105,7 +105,7 @@ export function Navbar() {
                 className={cn(
                   "focus-ring rounded-md px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-primary",
                   "text-slate-300 hover:bg-white/8 hover:text-white",
-                  pathname === item.href && "bg-orange-500/15 text-white"
+                  pathname === item.href && "bg-blue-500/15 text-white"
                 )}
               >
                 {item.label}
