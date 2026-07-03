@@ -1,77 +1,62 @@
 export const partners = [
   {
     name: "HP",
-    category: "Computing & Print",
-    logo: "/images/partners/hp.png"
+    category: "Computing & Print"
   },
   {
     name: "Dell",
-    category: "Enterprise Computing",
-    logo: "/images/partners/dell.png"
+    category: "Enterprise Computing"
   },
   {
     name: "Lenovo",
-    category: "Business Devices",
-    logo: "/images/partners/lenovo.png"
+    category: "Business Devices"
   },
   {
     name: "Acer",
-    category: "Computing Hardware",
-    logo: "/images/partners/acer.jpg"
+    category: "Computing Hardware"
   },
   {
     name: "Microsoft",
-    category: "Cloud & Productivity",
-    logo: "/images/partners/microsoft.png"
+    category: "Cloud & Productivity"
   },
   {
     name: "Cisco",
-    category: "Networking",
-    logo: "/images/partners/cisco.jpg"
+    category: "Networking"
   },
   {
     name: "Hikvision",
-    category: "Video Surveillance",
-    logo: "/images/partners/hikvision.png"
+    category: "Video Surveillance"
   },
   {
     name: "CP Plus",
-    category: "Security & CCTV",
-    logo: "/images/partners/cp-plus.png"
+    category: "Security & CCTV"
   },
   {
     name: "Dahua",
-    category: "Surveillance Technology",
-    logo: "/images/partners/dahua.png"
+    category: "Surveillance Technology"
   },
   {
     name: "Epson",
-    category: "Print & Projection",
-    logo: "/images/partners/epson.png"
+    category: "Print & Projection"
   },
   {
     name: "Canon",
-    category: "Imaging & Print",
-    logo: "/images/partners/canon.png"
+    category: "Imaging & Print"
   },
   {
     name: "Logitech",
-    category: "Collaboration Devices",
-    logo: "/images/partners/logitech.png"
+    category: "Collaboration Devices"
   },
   {
     name: "TP-Link",
-    category: "Networking & Wi-Fi",
-    logo: "/images/partners/tp-link.png"
+    category: "Networking & Wi-Fi"
   },
   {
     name: "Matrix",
-    category: "Telecom & Security",
-    logo: "/images/partners/matrix.png"
+    category: "Telecom & Security"
   },
   {
     name: "And many more",
-    category: "Trusted technology ecosystem",
-    logo: null
+    category: "Trusted technology ecosystem"
   }
 ];
