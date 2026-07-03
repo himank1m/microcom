@@ -16,7 +16,7 @@ export default function ThankYouPage() {
     <section className="section">
       <div className="container flex min-h-[55vh] items-center justify-center">
         <div className="max-w-2xl text-center">
-          <CheckCircle2 className="mx-auto size-12 text-accent" aria-hidden />
+          <CheckCircle2 className="mx-auto size-12 text-primary" aria-hidden />
           <h1 className="mt-6 text-4xl font-semibold text-foreground">Thank you.</h1>
           <p className="mt-5 text-lg leading-8 text-muted-foreground">
             Your request has been received. Our team will review your requirements and contact you within one business day to schedule the next step.

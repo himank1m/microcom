@@ -22,7 +22,7 @@ export function SolutionsGrid({ compact = false }: { compact?: boolean }) {
             return (
               <Reveal key={solution.title}>
                 <Card className="h-full">
-                  <Icon className="size-6 text-accent" aria-hidden />
+                  <Icon className="size-6 text-primary" aria-hidden />
                   <h3 className="mt-5 text-lg font-semibold text-foreground">{solution.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-muted-foreground">{solution.description}</p>
                 </Card>

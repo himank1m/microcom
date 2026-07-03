@@ -25,7 +25,7 @@ export function ThemeToggle() {
     <button
       type="button"
       onClick={toggleTheme}
-      className="focus-ring inline-flex size-10 items-center justify-center rounded-md border border-border bg-card text-foreground transition duration-200 hover:border-accent/50"
+      className="focus-ring inline-flex size-10 items-center justify-center rounded-md border border-border bg-card text-foreground transition duration-200 hover:border-primary/50"
       aria-label="Toggle theme"
       title="Toggle theme"
     >

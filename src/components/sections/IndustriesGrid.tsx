@@ -20,7 +20,7 @@ export function IndustriesGrid() {
             return (
               <Reveal key={industry.title}>
                 <Card className="h-full">
-                  <Icon className="size-6 text-accent" aria-hidden />
+                  <Icon className="size-6 text-primary" aria-hidden />
                   <h3 className="mt-5 text-base font-semibold text-foreground">{industry.title}</h3>
                 </Card>
               </Reveal>

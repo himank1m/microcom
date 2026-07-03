@@ -5,7 +5,7 @@ import { site } from "@/lib/utils";
 
 export function FinalCTA() {
   return (
-    <section className="section border-y border-primary bg-primary text-primary-foreground">
+    <section className="section border-y border-border bg-muted text-foreground dark:bg-black">
       <div className="container">
         <Reveal>
           <div className="grid items-center gap-8 lg:grid-cols-[1fr_auto]">
@@ -16,11 +16,11 @@ export function FinalCTA() {
               </h2>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <Button href={`tel:${site.phone.replace(/\s/g, "")}`} className="bg-accent text-white hover:bg-accent/92">
+              <Button href={`tel:${site.phone.replace(/\s/g, "")}`}>
                 <Phone className="size-4" aria-hidden />
                 Call Us
               </Button>
-              <Button href="/contact" variant="secondary" className="border-white/30 bg-transparent text-white hover:bg-white/10">
+              <Button href="/contact" variant="secondary">
                 <CalendarCheck className="size-4" aria-hidden />
                 Schedule a Site Assessment
               </Button>

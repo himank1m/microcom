@@ -26,7 +26,7 @@ export function Approach() {
             <Reveal key={title}>
               <div className="relative h-full rounded-lg border border-border bg-card p-6">
                 <div className="flex items-center justify-between gap-4">
-                  <span className="text-sm font-semibold text-accent">{String(index + 1).padStart(2, "0")}</span>
+                  <span className="text-sm font-semibold text-primary">{String(index + 1).padStart(2, "0")}</span>
                   {index < steps.length - 1 ? <ArrowRight className="hidden size-4 text-muted-foreground lg:block" aria-hidden /> : null}
                 </div>
                 <h3 className="mt-8 text-lg font-semibold text-foreground">{title}</h3>

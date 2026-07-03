@@ -14,7 +14,7 @@ export function TrustMetrics() {
             <div className="rounded-lg border border-primary/10 bg-card p-6 shadow-subtle">
               <p className="text-2xl font-semibold text-foreground">{metric.value}</p>
               <p className="mt-1 text-sm text-muted-foreground">{metric.label}</p>
-              <div className="mt-5 h-1 w-12 rounded-full bg-accent" />
+              <div className="mt-5 h-1 w-12 rounded-full bg-primary" />
             </div>
           </Reveal>
         ))}

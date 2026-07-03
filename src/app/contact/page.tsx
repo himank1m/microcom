@@ -37,7 +37,7 @@ export default function ContactPage() {
                 const Icon = item.icon;
                 return (
                   <div key={item.label} className="flex gap-4 rounded-lg border border-border bg-card p-5">
-                    <Icon className="mt-0.5 size-5 shrink-0 text-accent" aria-hidden />
+                    <Icon className="mt-0.5 size-5 shrink-0 text-primary" aria-hidden />
                     <div>
                       <p className="text-sm font-semibold text-foreground">{item.label}</p>
                       <p className="mt-1 text-sm leading-6 text-muted-foreground">{item.value}</p>

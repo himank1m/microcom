@@ -22,7 +22,7 @@ export function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-red-500/25 bg-[#070707]/95 shadow-[0_10px_34px_rgba(0,0,0,0.22)] backdrop-blur-xl">
+    <header className="sticky top-0 z-50 border-b border-border/80 bg-white/82 shadow-[0_1px_0_rgba(0,0,0,0.03)] backdrop-blur-xl dark:bg-black/82 dark:shadow-[0_1px_0_rgba(255,255,255,0.04)]">
       <nav className="container flex min-h-20 items-center justify-between gap-4" aria-label="Main navigation">
         <Link
           href="/"
@@ -37,10 +37,10 @@ export function Navbar() {
               <span className="size-1 rounded-full bg-current" />
             </span>
             <span className="block text-[1.55rem] font-black tracking-tight sm:text-[1.85rem]">
-              <span className="text-slate-100">Micro</span>
+              <span className="text-foreground">Micro</span>
               <span className="text-blue-400">ware</span>
             </span>
-            <span className="mt-0.5 block text-[0.58rem] font-bold uppercase tracking-[0.28em] text-slate-300 sm:text-[0.64rem]">
+            <span className="mt-0.5 block text-[0.58rem] font-bold uppercase tracking-[0.28em] text-muted-foreground sm:text-[0.64rem]">
               Communications
             </span>
             <span className="mt-1 block text-[0.7rem] font-semibold text-red-500 sm:text-xs">
@@ -56,8 +56,8 @@ export function Navbar() {
               href={item.href}
               className={cn(
                 "focus-ring rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-primary",
-                "text-slate-300 hover:bg-white/8 hover:text-white",
-                pathname === item.href && "bg-blue-500/15 text-white"
+                "hover:bg-muted hover:text-foreground",
+                pathname === item.href && "bg-primary/10 text-primary dark:text-white"
               )}
             >
               {item.label}
@@ -76,7 +76,7 @@ export function Navbar() {
         <div className="flex items-center gap-2 lg:hidden">
           <a
             href={`tel:${site.phone.replace(/\s/g, "")}`}
-            className="focus-ring inline-flex size-10 items-center justify-center rounded-md bg-accent text-white shadow-[0_10px_24px_hsl(var(--accent)/0.28)]"
+            className="focus-ring inline-flex size-10 items-center justify-center rounded-md bg-primary text-white shadow-[0_10px_24px_hsl(var(--primary)/0.22)]"
             aria-label="Call Microware Communications"
           >
             <Phone className="size-4" aria-hidden />
@@ -84,7 +84,7 @@ export function Navbar() {
           <ThemeToggle />
           <button
             type="button"
-            className="focus-ring inline-flex size-10 items-center justify-center rounded-md border border-white/15 bg-white/8 text-white"
+            className="focus-ring inline-flex size-10 items-center justify-center rounded-md border border-border bg-card text-foreground"
             onClick={() => setOpen((value) => !value)}
             aria-label="Toggle menu"
             aria-expanded={open}
@@ -95,7 +95,7 @@ export function Navbar() {
       </nav>
 
       {open ? (
-        <div className="border-t border-white/10 bg-[#070707] lg:hidden">
+        <div className="border-t border-border bg-white lg:hidden dark:bg-black">
           <div className="container grid gap-1 py-4">
             {navItems.map((item) => (
               <Link
@@ -104,8 +104,8 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className={cn(
                   "focus-ring rounded-md px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-primary",
-                  "text-slate-300 hover:bg-white/8 hover:text-white",
-                  pathname === item.href && "bg-blue-500/15 text-white"
+                  "hover:bg-muted hover:text-foreground",
+                  pathname === item.href && "bg-primary/10 text-primary dark:text-white"
                 )}
               >
                 {item.label}

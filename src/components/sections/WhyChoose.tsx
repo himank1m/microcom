@@ -27,7 +27,7 @@ export function WhyChoose() {
           {reasons.map(([title, description]) => (
             <Reveal key={title}>
               <Card className="h-full">
-                <CheckCircle2 className="size-5 text-accent" aria-hidden />
+                <CheckCircle2 className="size-5 text-primary" aria-hidden />
                 <h3 className="mt-5 text-lg font-semibold text-foreground">{title}</h3>
                 <p className="mt-3 text-sm leading-6 text-muted-foreground">{description}</p>
               </Card>

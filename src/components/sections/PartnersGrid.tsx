@@ -5,7 +5,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 
 export function PartnersGrid() {
   return (
-    <section className="section bg-[linear-gradient(180deg,hsl(var(--muted)/0.55),hsl(var(--background)))]">
+    <section className="section bg-muted/45 dark:bg-background">
       <div className="container">
         <Reveal>
           <SectionHeading
@@ -17,7 +17,7 @@ export function PartnersGrid() {
         <div className="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {partners.map((partner) => (
             <Reveal key={partner.name}>
-              <div className="group flex min-h-56 flex-col justify-between rounded-lg border border-primary/10 bg-card p-5 text-center shadow-subtle transition duration-200 hover:-translate-y-1 hover:border-accent/55 hover:shadow-[0_20px_55px_hsl(var(--primary)/0.12)] dark:shadow-subtle-dark">
+              <div className="group flex min-h-56 flex-col justify-between rounded-lg border border-border bg-card p-5 text-center shadow-subtle transition duration-200 hover:-translate-y-1 hover:border-primary/45 hover:shadow-[0_20px_55px_hsl(var(--primary)/0.12)] dark:shadow-subtle-dark">
                 <div className="flex h-32 items-center justify-center rounded-md border border-border/70 bg-white p-5">
                   {partner.logo ? (
                     <Image
@@ -28,7 +28,7 @@ export function PartnersGrid() {
                       className="max-h-24 w-auto max-w-full object-contain transition duration-200 group-hover:scale-[1.03]"
                     />
                   ) : (
-                    <span className="text-5xl font-semibold leading-none text-accent">
+                    <span className="text-5xl font-semibold leading-none text-primary">
                       +
                     </span>
                   )}
