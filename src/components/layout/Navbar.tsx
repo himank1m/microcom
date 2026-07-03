@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { AnimatePresence, motion } from "framer-motion";
 import { Menu, Phone, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
@@ -55,12 +56,19 @@ export function Navbar() {
               key={item.href}
               href={item.href}
               className={cn(
-                "focus-ring rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition hover:bg-muted hover:text-primary",
-                "hover:bg-muted hover:text-foreground",
-                pathname === item.href && "bg-primary/10 text-primary dark:text-white"
+                "focus-ring relative rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground",
+                pathname === item.href && "text-primary dark:text-white"
               )}
             >
-              {item.label}
+              {pathname === item.href ? (
+                <motion.span
+                  layoutId="active-nav"
+                  className="absolute inset-0 rounded-md bg-primary/10"
+                  transition={{ type: "spring", stiffness: 420, damping: 34, mass: 0.7 }}
+                  aria-hidden
+                />
+              ) : null}
+              <span className="relative z-10">{item.label}</span>
             </Link>
           ))}
         </div>
@@ -94,26 +102,39 @@ export function Navbar() {
         </div>
       </nav>
 
-      {open ? (
-        <div className="border-t border-border bg-white lg:hidden dark:bg-black">
+      <AnimatePresence>
+        {open ? (
+        <motion.div
+          className="border-t border-border bg-white lg:hidden dark:bg-black"
+          initial={{ opacity: 0, y: -10, filter: "blur(8px)" }}
+          animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
+          exit={{ opacity: 0, y: -8, filter: "blur(8px)" }}
+          transition={{ duration: 0.32, ease: [0.22, 1, 0.36, 1] }}
+        >
           <div className="container grid gap-1 py-4">
             {navItems.map((item) => (
-              <Link
+              <motion.div
                 key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "focus-ring rounded-md px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-primary",
-                  "hover:bg-muted hover:text-foreground",
-                  pathname === item.href && "bg-primary/10 text-primary dark:text-white"
-                )}
+                initial={{ opacity: 0, y: 8 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
               >
-                {item.label}
-              </Link>
+                <Link
+                  href={item.href}
+                  onClick={() => setOpen(false)}
+                  className={cn(
+                    "focus-ring block rounded-md px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
+                    pathname === item.href && "bg-primary/10 text-primary dark:text-white"
+                  )}
+                >
+                  {item.label}
+                </Link>
+              </motion.div>
             ))}
           </div>
-        </div>
-      ) : null}
+        </motion.div>
+        ) : null}
+      </AnimatePresence>
     </header>
   );
 }
