@@ -19,9 +19,10 @@ export function Footer() {
         <div>
           <div className="inline-flex flex-col">
             <span className="relative inline-flex items-baseline text-[1.8rem] font-semibold leading-none tracking-[-0.035em]">
-              <span className="absolute left-[4.72rem] top-[-0.45rem] -translate-x-1/2 text-red-500/85">
-                <span className="relative block h-2.5 w-4">
-                  <span className="absolute inset-x-0 top-0 mx-auto h-2 w-3.5 rounded-t-full border-x border-t border-current" />
+              <span className="absolute left-[4.72rem] top-[-0.58rem] -translate-x-1/2 text-red-500/90">
+                <span className="relative block h-3.5 w-5">
+                  <span className="absolute inset-x-0 top-0 mx-auto h-2.5 w-5 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
+                  <span className="absolute inset-x-0 top-1.5 mx-auto h-1.5 w-3 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
                   <span className="absolute inset-x-0 bottom-0 mx-auto size-1 rounded-full bg-current" />
                 </span>
               </span>

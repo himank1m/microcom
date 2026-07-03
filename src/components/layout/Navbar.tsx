@@ -31,15 +31,21 @@ export function Navbar() {
           aria-label="Microware Communications - Look No Further"
           onClick={() => setOpen(false)}
         >
-          <span className="relative inline-flex items-baseline text-[1.45rem] font-semibold leading-none tracking-[-0.035em] sm:text-[1.65rem]">
-            <span className="absolute left-[4.34rem] top-[-0.38rem] hidden -translate-x-1/2 text-red-500/85 transition duration-500 group-hover:-translate-y-0.5 group-hover:text-red-500 sm:flex">
-              <span className="relative block h-2.5 w-4">
-                <span className="absolute inset-x-0 top-0 mx-auto h-2 w-3.5 rounded-t-full border-x border-t border-current" />
-                <span className="absolute inset-x-0 bottom-0 mx-auto size-1 rounded-full bg-current" />
+          <span className="relative inline-flex flex-col leading-none">
+            <span className="relative inline-flex items-baseline text-[1.45rem] font-semibold tracking-[-0.035em] sm:text-[1.65rem]">
+              <span className="absolute left-[4.38rem] top-[-0.52rem] hidden -translate-x-1/2 text-red-500/90 transition duration-500 group-hover:-translate-y-0.5 group-hover:text-red-500 sm:block">
+                <span className="relative block h-3.5 w-5">
+                  <span className="absolute inset-x-0 top-0 mx-auto h-2.5 w-5 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
+                  <span className="absolute inset-x-0 top-1.5 mx-auto h-1.5 w-3 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
+                  <span className="absolute inset-x-0 bottom-0 mx-auto size-1 rounded-full bg-current" />
+                </span>
               </span>
+              <span className="text-foreground">Micro</span>
+              <span className="text-primary">ware</span>
             </span>
-            <span className="text-foreground">Micro</span>
-            <span className="text-primary">ware</span>
+            <span className="mt-1 text-[0.58rem] font-medium uppercase tracking-[0.22em] text-muted-foreground sm:text-[0.62rem]">
+              Communications
+            </span>
           </span>
         </Link>
 
