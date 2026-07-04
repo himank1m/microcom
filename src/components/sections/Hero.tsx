@@ -64,7 +64,7 @@ export function Hero() {
               show: { opacity: 1, y: 0, scale: 1, filter: "blur(0px)", transition: { duration: 1, ease: [0.16, 1, 0.3, 1] } }
             }}
           >
-            Technology infrastructure, calmly delivered.
+            Technology infrastructure, Calmly delivered.
           </motion.h1>
           <motion.p
             className="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground"
