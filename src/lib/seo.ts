@@ -48,14 +48,6 @@ export const structuredData = [
     slogan: site.tagline,
     email: site.email,
     telephone: `+91${site.phone}`,
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "13/C Ext. Gandhi Nagar",
-      addressLocality: "Jammu",
-      addressRegion: "Jammu & Kashmir",
-      postalCode: "180004",
-      addressCountry: "IN"
-    },
     areaServed: ["Jammu", "Jammu & Kashmir", "Northern India"],
     foundingDate: "1999"
   },
@@ -70,14 +62,6 @@ export const structuredData = [
     email: site.email,
     telephone: `+91${site.phone}`,
     priceRange: "$$",
-    address: {
-      "@type": "PostalAddress",
-      streetAddress: "13/C Ext. Gandhi Nagar",
-      addressLocality: "Jammu",
-      addressRegion: "Jammu & Kashmir",
-      postalCode: "180004",
-      addressCountry: "IN"
-    },
     areaServed: ["Jammu", "Jammu & Kashmir", "Northern India"],
     knowsAbout: [
       "Enterprise IT solutions",

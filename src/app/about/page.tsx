@@ -28,7 +28,7 @@ export default function AboutPage() {
           <Reveal>
             <div className="space-y-5 text-base leading-8 text-muted-foreground">
               <p>
-                For more than 25 years, Microware Communications has supported organizations that need dependable technology infrastructure and a professional service environment. The company is headquartered at 13/C Ext. Gandhi Nagar, Jammu, and works with clients across Northern India.
+                For more than 25 years, Microware Communications has supported organizations that need dependable technology infrastructure and a professional service environment, working with clients across Northern India.
               </p>
               <p>
                 The work spans enterprise IT, surveillance, networking, servers, software, managed services, and AMC support. The orientation is serious and practical: understand the environment, specify carefully, deploy with discipline, and remain available after installation.

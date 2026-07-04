@@ -9,6 +9,5 @@ export const site = {
   name: "Microware Communications",
   tagline: "Look No Further",
   phone: "9419183356",
-  email: "microware@microwaremail.com",
-  address: "13/C Ext. Gandhi Nagar, Jammu, Jammu & Kashmir, 180004"
+  email: "microware@microwaremail.com"
 };

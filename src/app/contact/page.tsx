@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Mail, MapPin, Phone, Clock } from "lucide-react";
+import { Mail, Phone, Clock } from "lucide-react";
 import { ContactForm } from "./ContactForm";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -17,7 +17,6 @@ export const metadata: Metadata = {
 const contactItems = [
   { icon: Phone, label: "Phone", value: site.phone },
   { icon: Mail, label: "Email", value: site.email },
-  { icon: MapPin, label: "Office", value: site.address },
   { icon: Clock, label: "Office Hours", value: "Monday to Saturday, 10:00 AM to 6:00 PM" }
 ];
 
@@ -45,9 +44,6 @@ export default function ContactPage() {
                   </div>
                 );
               })}
-            </div>
-            <div className="mt-5 flex min-h-56 items-center justify-center rounded-lg border border-dashed border-border bg-muted/50 p-6 text-center text-sm text-muted-foreground">
-              Embedded map placeholder for 13/C Ext. Gandhi Nagar, Jammu.
             </div>
           </div>
         </Reveal>
