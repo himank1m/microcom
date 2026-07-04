@@ -24,7 +24,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-white/82 shadow-[0_1px_0_rgba(0,0,0,0.03)] backdrop-blur-xl dark:bg-black/82 dark:shadow-[0_1px_0_rgba(244,63,94,0.1)]">
-      <nav className="container flex min-h-20 items-center justify-between gap-4" aria-label="Main navigation">
+      <nav className="container flex min-h-24 items-center justify-between gap-3 sm:min-h-20 sm:gap-4" aria-label="Main navigation">
         <Link
           href="/"
           className="focus-ring group flex items-center rounded-md py-2"
@@ -32,7 +32,7 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         >
           <span className="relative inline-flex flex-col leading-none">
-            <span className="relative inline-flex items-baseline text-[1.45rem] font-semibold tracking-[-0.035em] sm:text-[1.65rem]">
+            <span className="relative inline-flex items-baseline text-[1.58rem] font-semibold tracking-[-0.035em] sm:text-[1.65rem]">
               <span className="absolute left-[4.38rem] top-[-0.52rem] hidden -translate-x-1/2 text-primary/90 transition duration-500 group-hover:-translate-y-0.5 group-hover:text-primary sm:block">
                 <span className="relative block h-3.5 w-5">
                   <span className="absolute inset-x-0 top-0 mx-auto h-2.5 w-5 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
@@ -43,10 +43,10 @@ export function Navbar() {
               <span className="text-foreground">Micro</span>
               <span className="text-primary">ware</span>
             </span>
-            <span className="mt-1 text-[0.58rem] font-medium uppercase tracking-[0.22em] text-muted-foreground sm:text-[0.62rem]">
+            <span className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground sm:text-[0.62rem] sm:font-medium sm:tracking-[0.22em]">
               Communications
             </span>
-            <span className="mt-1 text-[0.55rem] font-medium tracking-[0.08em] text-primary/90 sm:text-[0.6rem]">
+            <span className="mt-1 text-[0.64rem] font-medium tracking-[0.04em] text-primary/90 sm:text-[0.6rem] sm:tracking-[0.08em]">
               Secure. Connect. Support.
             </span>
           </span>
