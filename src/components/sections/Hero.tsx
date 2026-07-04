@@ -88,7 +88,7 @@ export function Hero() {
             </Button>
             <Button href="/contact" variant="secondary">
               <CalendarCheck className="size-4" aria-hidden />
-              Schedule a Site Assessment
+              Schedule a Meeting
             </Button>
           </motion.div>
         </motion.div>

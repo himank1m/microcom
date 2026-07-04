@@ -65,7 +65,7 @@ export function ContactForm() {
         Preferred Contact Time
         <input name="preferredTime" className="rounded-md border-border bg-background" placeholder="Example: Weekdays, 11 AM to 2 PM" />
       </label>
-      <Button type="submit" className="w-full sm:w-auto">Schedule a Site Assessment</Button>
+      <Button type="submit" className="w-full sm:w-auto">Schedule a Meeting</Button>
     </form>
   );
 }

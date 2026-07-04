@@ -28,7 +28,7 @@ export default function ContactPage() {
           <div>
             <SectionHeading
               eyebrow="Contact"
-              title="Schedule a Site Assessment"
+              title="Schedule a Meeting"
               description="Share your requirements and Microware will review the environment, priorities, and next steps with care."
             />
             <div className="mt-9 grid gap-4">

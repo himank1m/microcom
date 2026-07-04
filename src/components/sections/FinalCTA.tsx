@@ -22,7 +22,7 @@ export function FinalCTA() {
               </Button>
               <Button href="/contact" variant="secondary">
                 <CalendarCheck className="size-4" aria-hidden />
-                Schedule a Site Assessment
+                Schedule a Meeting
               </Button>
             </div>
           </div>
