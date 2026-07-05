@@ -3,6 +3,7 @@ import { FinalCTA } from "@/components/sections/FinalCTA";
 import { Hero } from "@/components/sections/Hero";
 import { SolutionsGrid } from "@/components/sections/SolutionsGrid";
 import { TrustMetrics } from "@/components/sections/TrustMetrics";
+import { ViewCounter } from "@/components/sections/ViewCounter";
 
 export const metadata: Metadata = {
   alternates: {
@@ -15,6 +16,7 @@ export default function HomePage() {
     <>
       <Hero />
       <TrustMetrics />
+      <ViewCounter />
       <SolutionsGrid compact />
       <FinalCTA />
     </>
