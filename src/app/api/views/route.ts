@@ -103,12 +103,6 @@ async function getViewCount(client: SupabaseClient) {
 }
 
 async function incrementViewCount(client: SupabaseClient, rowId: string) {
-  const { data, error } = await client.rpc("increment_site_views", { row_id: rowId });
-
-  if (!error) {
-    return parseCount(data);
-  }
-
   const initialCount = rowId === totalViewsId ? viewBaseline + 1 : 1;
   const current = await client.from("site_views").select("count").eq("id", rowId).maybeSingle<ViewRow>();
 
