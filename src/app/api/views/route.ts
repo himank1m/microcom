@@ -141,8 +141,7 @@ async function incrementViewCount(client: SupabaseClient, rowId: string) {
   const updated = await client
     .from("site_views")
     .update({
-      count: nextCount,
-      updated_at: new Date().toISOString()
+      count: nextCount
     })
     .eq("id", rowId)
     .select("count")
