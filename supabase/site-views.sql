@@ -32,3 +32,6 @@ with check (true);
 insert into public.site_views (id, count)
 values ('total', 315)
 on conflict (id) do nothing;
+
+grant usage on schema public to anon, authenticated;
+grant select, insert, update on public.site_views to anon, authenticated;
