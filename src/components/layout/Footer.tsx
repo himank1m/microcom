@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { site } from "@/lib/utils";
 import { solutions } from "@/data/solutions";
+import { ViewCounter } from "@/components/sections/ViewCounter";
 
 const quickLinks = [
   ["Home", "/"],
@@ -64,8 +65,9 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-5">
-        <div className="container flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
+        <div className="container flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
           <p>&copy; {new Date().getFullYear()} Microware Communications. All rights reserved.</p>
+          <ViewCounter />
           <p className="text-accent">Made with love by Himank Magotra.</p>
         </div>
       </div>

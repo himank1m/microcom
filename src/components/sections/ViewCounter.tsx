@@ -62,15 +62,11 @@ export function ViewCounter() {
   }, []);
 
   return (
-    <section className="border-b border-border py-5">
-      <div className="container flex justify-center">
-        <p className="rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-muted-foreground">
-          Website views{" "}
-          <span className="tabular-nums text-primary" aria-live="polite">
-            {typeof views === "number" ? formatViews(views) : "------"}
-          </span>
-        </p>
-      </div>
-    </section>
+    <p className="inline-flex w-fit items-center rounded-full border border-border bg-card px-3 py-1.5 text-xs font-medium text-muted-foreground">
+      Website views{" "}
+      <span className="ml-1 tabular-nums text-primary" aria-live="polite">
+        {typeof views === "number" ? formatViews(views) : "------"}
+      </span>
+    </p>
   );
 }
