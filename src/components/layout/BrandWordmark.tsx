@@ -20,19 +20,19 @@ export function BrandWordmark({ className, markClassName, size = "header" }: Bra
       <span className="text-foreground">Micro</span>
       <span className="text-primary">ware</span>
       <svg
-        viewBox="0 0 28 24"
+        viewBox="0 0 38 25"
         className={cn(
-          "pointer-events-none absolute left-1/2 h-5 w-7 -translate-x-1/2 text-primary",
-          isFooter ? "-top-[0.92rem]" : "-top-[0.84rem]",
+          "pointer-events-none absolute left-1/2 h-5 w-9 -translate-x-1/2 text-primary",
+          isFooter ? "-top-[0.94rem]" : "-top-[0.86rem]",
           markClassName
         )}
         fill="none"
         aria-hidden="true"
       >
-        <path d="M2.8 8.8C8.9 3.1 19.1 3.1 25.2 8.8" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        <path d="M7.1 13.1C10.9 9.7 17.1 9.7 20.9 13.1" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        <path d="M11 17C12.7 15.6 15.3 15.6 17 17" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
-        <circle cx="14" cy="20.4" r="1.55" fill="currentColor" />
+        <path d="M3 9.4C11.5 2.4 26.5 2.4 35 9.4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+        <path d="M8.4 14.2C14 9.9 24 9.9 29.6 14.2" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+        <path d="M13.8 18.4C16.4 16.6 21.6 16.6 24.2 18.4" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" />
+        <circle cx="19" cy="21.8" r="1.55" fill="currentColor" />
       </svg>
     </span>
   );
