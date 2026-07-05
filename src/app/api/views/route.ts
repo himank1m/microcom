@@ -1,4 +1,4 @@
-import { createClient } from "@supabase/supabase-js";
+import { createClient, type SupabaseClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
@@ -10,6 +10,16 @@ const viewBaseline = 315;
 type ViewRow = {
   count: number | string | null;
 };
+
+function json(body: Record<string, unknown>, init?: ResponseInit) {
+  return NextResponse.json(body, {
+    ...init,
+    headers: {
+      "Cache-Control": "no-store",
+      ...init?.headers
+    }
+  });
+}
 
 function getSupabaseConfig() {
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
@@ -56,7 +66,24 @@ function normalizePath(value: unknown) {
   return typeof value === "string" && value.startsWith("/") ? value : "/";
 }
 
-async function getViewCount(client: NonNullable<ReturnType<typeof getSupabaseServerClient>>) {
+async function ensureViewRow(client: SupabaseClient, rowId: string, count: number) {
+  const { error } = await client.from("site_views").upsert(
+    {
+      count,
+      id: rowId
+    },
+    {
+      ignoreDuplicates: true,
+      onConflict: "id"
+    }
+  );
+
+  if (error) {
+    throw error;
+  }
+}
+
+async function getViewCount(client: SupabaseClient) {
   const { data, error } = await client
     .from("site_views")
     .select("count")
@@ -67,20 +94,54 @@ async function getViewCount(client: NonNullable<ReturnType<typeof getSupabaseSer
     throw error;
   }
 
-  return parseCount(data?.count);
-}
-
-async function incrementViewCount(
-  client: NonNullable<ReturnType<typeof getSupabaseServerClient>>,
-  rowId: string
-) {
-  const { data, error } = await client.rpc("increment_site_views", { row_id: rowId });
-
-  if (error) {
-    throw error;
+  if (!data) {
+    await ensureViewRow(client, totalViewsId, viewBaseline);
+    return viewBaseline;
   }
 
-  return parseCount(data);
+  return parseCount(data.count);
+}
+
+async function incrementViewCount(client: SupabaseClient, rowId: string) {
+  const { data, error } = await client.rpc("increment_site_views", { row_id: rowId });
+
+  if (!error) {
+    return parseCount(data);
+  }
+
+  const initialCount = rowId === totalViewsId ? viewBaseline + 1 : 1;
+  const current = await client.from("site_views").select("count").eq("id", rowId).maybeSingle<ViewRow>();
+
+  if (current.error) {
+    throw current.error;
+  }
+
+  if (!current.data) {
+    const inserted = await client.from("site_views").insert({ count: initialCount, id: rowId }).select("count").single<ViewRow>();
+
+    if (inserted.error) {
+      throw inserted.error;
+    }
+
+    return parseCount(inserted.data.count);
+  }
+
+  const nextCount = parseCount(current.data.count) + 1;
+  const updated = await client
+    .from("site_views")
+    .update({
+      count: nextCount,
+      updated_at: new Date().toISOString()
+    })
+    .eq("id", rowId)
+    .select("count")
+    .single<ViewRow>();
+
+  if (updated.error) {
+    throw updated.error;
+  }
+
+  return parseCount(updated.data.count);
 }
 
 export async function GET() {
@@ -88,15 +149,15 @@ export async function GET() {
     const client = getSupabaseServerClient();
 
     if (!client) {
-      return NextResponse.json({ configured: false, views: viewBaseline });
+      return json({ configured: false, reason: "missing_supabase_env", views: viewBaseline });
     }
 
-    return NextResponse.json({
+    return json({
       configured: true,
       views: await getViewCount(client)
     });
   } catch {
-    return NextResponse.json({ configured: false, views: viewBaseline }, { status: 503 });
+    return json({ configured: false, reason: "supabase_read_failed", views: viewBaseline }, { status: 503 });
   }
 }
 
@@ -105,7 +166,7 @@ export async function POST(request: Request) {
     const client = getSupabaseServerClient();
 
     if (!client) {
-      return NextResponse.json({ configured: false, views: viewBaseline });
+      return json({ configured: false, reason: "missing_supabase_env", views: viewBaseline });
     }
 
     const body = (await request.json().catch(() => ({}))) as { path?: unknown };
@@ -116,11 +177,11 @@ export async function POST(request: Request) {
       // Per-route counts are useful, but total count should still succeed if this fails.
     });
 
-    return NextResponse.json({
+    return json({
       configured: true,
       views
     });
   } catch {
-    return NextResponse.json({ configured: false, views: viewBaseline }, { status: 503 });
+    return json({ configured: false, reason: "supabase_increment_failed", views: viewBaseline }, { status: 503 });
   }
 }
