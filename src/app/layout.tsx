@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import { ViewTracker } from "@/components/analytics/ViewTracker";
 import { absoluteUrl, baseUrl, defaultDescription, seoKeywords, structuredData } from "@/lib/seo";
 
 export const metadata: Metadata = {
@@ -65,6 +66,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
               "try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}"
           }}
         />
+        <ViewTracker />
         <Navbar />
         <main>{children}</main>
         <Footer />
