@@ -4,6 +4,7 @@ export const dynamic = "force-dynamic";
 
 const totalViewsKey = "microware:views:total";
 const pathViewsPrefix = "microware:views:path:";
+const viewBaseline = 315;
 
 type RedisResponse = {
   result?: unknown;
@@ -61,13 +62,14 @@ async function redisCommand(command: string, ...parts: string[]) {
 export async function GET() {
   try {
     const data = await redisCommand("get", totalViewsKey);
+    const storedViews = data ? parseCount(data.result) : 0;
 
     return NextResponse.json({
       configured: data !== null,
-      views: data ? parseCount(data.result) : null
+      views: viewBaseline + storedViews
     });
   } catch {
-    return NextResponse.json({ configured: false, views: null }, { status: 503 });
+    return NextResponse.json({ configured: false, views: viewBaseline }, { status: 503 });
   }
 }
 
@@ -78,16 +80,16 @@ export async function POST(request: Request) {
     const total = await redisCommand("incr", totalViewsKey);
 
     if (!total) {
-      return NextResponse.json({ configured: false, views: null });
+      return NextResponse.json({ configured: false, views: viewBaseline });
     }
 
     await redisCommand("incr", `${pathViewsPrefix}${path}`);
 
     return NextResponse.json({
       configured: true,
-      views: parseCount(total.result)
+      views: viewBaseline + parseCount(total.result)
     });
   } catch {
-    return NextResponse.json({ configured: false, views: null }, { status: 503 });
+    return NextResponse.json({ configured: false, views: viewBaseline }, { status: 503 });
   }
 }
