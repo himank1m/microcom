@@ -11,6 +11,23 @@ type ViewRow = {
   count: number | string | null;
 };
 
+function getErrorDetails(error: unknown) {
+  if (error && typeof error === "object") {
+    const details = error as { code?: unknown; details?: unknown; hint?: unknown; message?: unknown };
+
+    return {
+      code: typeof details.code === "string" ? details.code : undefined,
+      details: typeof details.details === "string" ? details.details : undefined,
+      hint: typeof details.hint === "string" ? details.hint : undefined,
+      message: typeof details.message === "string" ? details.message : "Unknown Supabase error"
+    };
+  }
+
+  return {
+    message: error instanceof Error ? error.message : "Unknown Supabase error"
+  };
+}
+
 function json(body: Record<string, unknown>, init?: ResponseInit) {
   return NextResponse.json(body, {
     ...init,
@@ -150,8 +167,11 @@ export async function GET() {
       configured: true,
       views: await getViewCount(client)
     });
-  } catch {
-    return json({ configured: false, reason: "supabase_read_failed", views: viewBaseline }, { status: 503 });
+  } catch (error) {
+    return json(
+      { configured: false, error: getErrorDetails(error), reason: "supabase_read_failed", views: viewBaseline },
+      { status: 503 }
+    );
   }
 }
 
@@ -175,7 +195,10 @@ export async function POST(request: Request) {
       configured: true,
       views
     });
-  } catch {
-    return json({ configured: false, reason: "supabase_increment_failed", views: viewBaseline }, { status: 503 });
+  } catch (error) {
+    return json(
+      { configured: false, error: getErrorDetails(error), reason: "supabase_increment_failed", views: viewBaseline },
+      { status: 503 }
+    );
   }
 }
