@@ -12,11 +12,21 @@ function formatViews(value: number) {
 }
 
 export function ViewCounter() {
-  const [views, setViews] = useState(315);
+  const [views, setViews] = useState<number | null>(null);
   const hasTrackedView = useRef(false);
 
   useEffect(() => {
     const controller = new AbortController();
+    const storedViews = window.localStorage.getItem("microware:views");
+
+    if (storedViews) {
+      const parsedViews = Number.parseInt(storedViews, 10);
+
+      if (Number.isFinite(parsedViews)) {
+        setViews(parsedViews);
+      }
+    }
+
     const trackView = () => {
       if (hasTrackedView.current) {
         return;
@@ -37,12 +47,11 @@ export function ViewCounter() {
         .then((data: ViewsResponse | null) => {
           if (typeof data?.views === "number") {
             setViews(data.views);
+            window.localStorage.setItem("microware:views", String(data.views));
             (window as Window & { __microwareViews?: number }).__microwareViews = data.views;
           }
         })
-        .catch(() => {
-          setViews(315);
-        });
+        .catch(() => {});
     };
 
     trackView();
@@ -56,7 +65,10 @@ export function ViewCounter() {
     <section className="border-b border-border py-5">
       <div className="container flex justify-center">
         <p className="rounded-full border border-border bg-card px-4 py-2 text-xs font-medium text-muted-foreground">
-          Website views <span className="tabular-nums text-primary">{formatViews(views)}</span>
+          Website views{" "}
+          <span className="tabular-nums text-primary" aria-live="polite">
+            {typeof views === "number" ? formatViews(views) : "------"}
+          </span>
         </p>
       </div>
     </section>
