@@ -21,6 +21,7 @@ export function ViewTracker() {
       .then((response) => (response.ok ? response.json() : null))
       .then((data: { views?: unknown } | null) => {
         if (typeof data?.views === "number") {
+          (window as Window & { __microwareViews?: number }).__microwareViews = data.views;
           window.dispatchEvent(new CustomEvent("microware:views", { detail: { views: data.views } }));
         }
       })

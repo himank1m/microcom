@@ -16,6 +16,7 @@ export function ViewCounter() {
 
   useEffect(() => {
     const controller = new AbortController();
+    const getLiveViews = () => (window as Window & { __microwareViews?: number }).__microwareViews;
     const updateViews = (event: Event) => {
       const views = (event as CustomEvent<{ views?: unknown }>).detail?.views;
 
@@ -23,23 +24,37 @@ export function ViewCounter() {
         setViews(views);
       }
     };
+    const fetchViews = () => {
+      void fetch(`/api/views?t=${Date.now()}`, {
+        cache: "no-store",
+        signal: controller.signal
+      })
+        .then((response) => (response.ok ? response.json() : null))
+        .then((data: ViewsResponse | null) => {
+          setViews(data?.views ?? 315);
+        })
+        .catch(() => {
+          setViews(315);
+        });
+    };
 
     window.addEventListener("microware:views", updateViews);
 
-    void fetch("/api/views", {
-      cache: "no-store",
-      signal: controller.signal
-    })
-      .then((response) => (response.ok ? response.json() : null))
-      .then((data: ViewsResponse | null) => {
-        setViews(data?.views ?? 315);
-      })
-      .catch(() => {
-        setViews(315);
-      });
+    const latestViews = getLiveViews();
+
+    if (typeof latestViews === "number") {
+      setViews(latestViews);
+    }
+
+    fetchViews();
+
+    const delayedRefresh = window.setTimeout(fetchViews, 1200);
+    const intervalRefresh = window.setInterval(fetchViews, 15000);
 
     return () => {
       controller.abort();
+      window.clearTimeout(delayedRefresh);
+      window.clearInterval(intervalRefresh);
       window.removeEventListener("microware:views", updateViews);
     };
   }, []);
