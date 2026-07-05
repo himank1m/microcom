@@ -7,6 +7,10 @@ export function ViewTracker() {
   const pathname = usePathname();
 
   useEffect(() => {
+    if (pathname === "/") {
+      return;
+    }
+
     const controller = new AbortController();
 
     void fetch("/api/views", {

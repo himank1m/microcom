@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 type ViewsResponse = {
   configured: boolean;
@@ -13,49 +13,42 @@ function formatViews(value: number) {
 
 export function ViewCounter() {
   const [views, setViews] = useState(315);
+  const hasTrackedView = useRef(false);
 
   useEffect(() => {
     const controller = new AbortController();
-    const getLiveViews = () => (window as Window & { __microwareViews?: number }).__microwareViews;
-    const updateViews = (event: Event) => {
-      const views = (event as CustomEvent<{ views?: unknown }>).detail?.views;
-
-      if (typeof views === "number") {
-        setViews(views);
+    const trackView = () => {
+      if (hasTrackedView.current) {
+        return;
       }
-    };
-    const fetchViews = () => {
+
+      hasTrackedView.current = true;
+
       void fetch(`/api/views?t=${Date.now()}`, {
+        body: JSON.stringify({ path: window.location.pathname }),
         cache: "no-store",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST",
         signal: controller.signal
       })
         .then((response) => (response.ok ? response.json() : null))
         .then((data: ViewsResponse | null) => {
-          setViews(data?.views ?? 315);
+          if (typeof data?.views === "number") {
+            setViews(data.views);
+            (window as Window & { __microwareViews?: number }).__microwareViews = data.views;
+          }
         })
         .catch(() => {
           setViews(315);
         });
     };
 
-    window.addEventListener("microware:views", updateViews);
-
-    const latestViews = getLiveViews();
-
-    if (typeof latestViews === "number") {
-      setViews(latestViews);
-    }
-
-    fetchViews();
-
-    const delayedRefresh = window.setTimeout(fetchViews, 1200);
-    const intervalRefresh = window.setInterval(fetchViews, 15000);
+    trackView();
 
     return () => {
       controller.abort();
-      window.clearTimeout(delayedRefresh);
-      window.clearInterval(intervalRefresh);
-      window.removeEventListener("microware:views", updateViews);
     };
   }, []);
 
