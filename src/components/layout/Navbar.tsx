@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { BrandWordmark } from "@/components/layout/BrandWordmark";
 import { cn, site } from "@/lib/utils";
 
 const navItems = [
@@ -33,7 +32,23 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         >
           <span className="relative inline-flex flex-col leading-none">
-            <BrandWordmark className="transition duration-500 group-hover:-translate-y-0.5" />
+            <span className="relative inline-flex items-baseline text-[1.58rem] font-semibold tracking-[-0.035em] sm:text-[1.65rem]">
+              <span className="absolute left-[4.38rem] top-[-0.52rem] hidden -translate-x-1/2 text-primary/90 transition duration-500 group-hover:-translate-y-0.5 group-hover:text-primary sm:block">
+                <span className="relative block h-3.5 w-5">
+                  <span className="absolute inset-x-0 top-0 mx-auto h-2.5 w-5 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
+                  <span className="absolute inset-x-0 top-1.5 mx-auto h-1.5 w-3 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
+                  <span className="absolute inset-x-0 bottom-0 mx-auto size-1 rounded-full bg-current" />
+                </span>
+              </span>
+              <span className="text-foreground">Micro</span>
+              <span className="text-primary">ware</span>
+            </span>
+            <span className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground sm:text-[0.62rem] sm:font-medium sm:tracking-[0.22em]">
+              Communications
+            </span>
+            <span className="mt-1 text-[0.64rem] font-medium tracking-[0.04em] text-primary/90 sm:text-[0.6rem] sm:tracking-[0.08em]">
+              Secure. Connect. Support.
+            </span>
           </span>
         </Link>
 

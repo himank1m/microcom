@@ -2,7 +2,6 @@ import Link from "next/link";
 import { site } from "@/lib/utils";
 import { solutions } from "@/data/solutions";
 import { ViewCounter } from "@/components/sections/ViewCounter";
-import { BrandWordmark } from "@/components/layout/BrandWordmark";
 
 const quickLinks = [
   ["Home", "/"],
@@ -20,7 +19,21 @@ export function Footer() {
       <div className="container grid gap-10 py-14 md:grid-cols-[1.3fr_0.7fr_1fr]">
         <div>
           <div className="inline-flex flex-col">
-            <BrandWordmark size="footer" />
+            <span className="relative inline-flex items-baseline text-[1.8rem] font-semibold leading-none tracking-[-0.035em]">
+              <span className="absolute left-[4.72rem] top-[-0.58rem] -translate-x-1/2 text-primary/90">
+                <span className="relative block h-3.5 w-5">
+                  <span className="absolute inset-x-0 top-0 mx-auto h-2.5 w-5 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
+                  <span className="absolute inset-x-0 top-1.5 mx-auto h-1.5 w-3 rounded-t-full border-x-[1.5px] border-t-[1.5px] border-current" />
+                  <span className="absolute inset-x-0 bottom-0 mx-auto size-1 rounded-full bg-current" />
+                </span>
+              </span>
+              <span className="text-foreground">Micro</span>
+              <span className="text-primary">ware</span>
+            </span>
+            <span className="mt-2 text-[0.65rem] font-medium uppercase tracking-[0.24em] text-muted-foreground">
+              Communications
+            </span>
+            <span className="mt-2 text-sm font-semibold text-accent">Secure. Connect. Support.</span>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-6 text-muted-foreground">
             Enterprise technology solutions built around reliability.
