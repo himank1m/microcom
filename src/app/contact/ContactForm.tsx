@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const organizationTypes = ["Business / Enterprise", "Government Department", "Defence / Military", "Manufacturing", "Other"];
@@ -8,11 +9,35 @@ const requirementTypes = ["Surveillance & Security", "Enterprise Networking", "S
 
 export function ContactForm() {
   const router = useRouter();
+  const [error, setError] = useState("");
+  const [submitting, setSubmitting] = useState(false);
 
-  function submitForm(event: React.FormEvent<HTMLFormElement>) {
+  async function submitForm(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    // TODO: Connect this form to backend email/CRM handling before production launch.
-    router.push("/thank-you");
+    setError("");
+    setSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const payload = Object.fromEntries(formData.entries());
+
+    try {
+      const response = await fetch("/api/contact", {
+        body: JSON.stringify(payload),
+        headers: {
+          "Content-Type": "application/json"
+        },
+        method: "POST"
+      });
+
+      if (!response.ok) {
+        throw new Error("Unable to send request");
+      }
+
+      router.push("/thank-you");
+    } catch {
+      setError("We could not send your request right now. Please call or email Microware directly.");
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -65,7 +90,10 @@ export function ContactForm() {
         Preferred Contact Time
         <input name="preferredTime" className="rounded-md border-border bg-background" placeholder="Example: Weekdays, 11 AM to 2 PM" />
       </label>
-      <Button type="submit" className="w-full sm:w-auto">Schedule a Meeting</Button>
+      {error ? <p className="text-sm font-medium text-primary" role="alert">{error}</p> : null}
+      <Button type="submit" className="w-full sm:w-auto" disabled={submitting}>
+        {submitting ? "Sending Request..." : "Schedule a Meeting"}
+      </Button>
     </form>
   );
 }
