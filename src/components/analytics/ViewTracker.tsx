@@ -17,9 +17,16 @@ export function ViewTracker() {
       body: JSON.stringify({ path: pathname }),
       keepalive: true,
       signal: controller.signal
-    }).catch(() => {
-      // View tracking is best-effort and should never affect browsing.
-    });
+    })
+      .then((response) => (response.ok ? response.json() : null))
+      .then((data: { views?: unknown } | null) => {
+        if (typeof data?.views === "number") {
+          window.dispatchEvent(new CustomEvent("microware:views", { detail: { views: data.views } }));
+        }
+      })
+      .catch(() => {
+        // View tracking is best-effort and should never affect browsing.
+      });
 
     return () => {
       controller.abort();

@@ -16,6 +16,15 @@ export function ViewCounter() {
 
   useEffect(() => {
     const controller = new AbortController();
+    const updateViews = (event: Event) => {
+      const views = (event as CustomEvent<{ views?: unknown }>).detail?.views;
+
+      if (typeof views === "number") {
+        setViews(views);
+      }
+    };
+
+    window.addEventListener("microware:views", updateViews);
 
     void fetch("/api/views", {
       cache: "no-store",
@@ -31,6 +40,7 @@ export function ViewCounter() {
 
     return () => {
       controller.abort();
+      window.removeEventListener("microware:views", updateViews);
     };
   }, []);
 

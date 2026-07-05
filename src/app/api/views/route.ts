@@ -1,27 +1,42 @@
+import { createClient } from "@supabase/supabase-js";
 import { NextResponse } from "next/server";
 
 export const dynamic = "force-dynamic";
 
-const totalViewsKey = "microware:views:total";
-const pathViewsPrefix = "microware:views:path:";
+const totalViewsId = "total";
+const pathViewsPrefix = "path:";
 const viewBaseline = 315;
 
-type RedisResponse = {
-  result?: unknown;
+type ViewRow = {
+  count: number | string | null;
 };
 
-function getRedisConfig() {
-  const url = process.env.KV_REST_API_URL ?? process.env.UPSTASH_REDIS_REST_URL;
-  const token = process.env.KV_REST_API_TOKEN ?? process.env.UPSTASH_REDIS_REST_TOKEN;
+function getSupabaseConfig() {
+  const url = process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
+  const key =
+    process.env.SUPABASE_SERVICE_ROLE_KEY ??
+    process.env.SUPABASE_SERVICE_KEY ??
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
-  if (!url || !token) {
+  if (!url || !key) {
     return null;
   }
 
-  return {
-    token,
-    url: url.replace(/\/$/, "")
-  };
+  return { key, url };
+}
+
+function getSupabaseServerClient() {
+  const config = getSupabaseConfig();
+
+  if (!config) {
+    return null;
+  }
+
+  return createClient(config.url, config.key, {
+    auth: {
+      persistSession: false
+    }
+  });
 }
 
 function parseCount(value: unknown) {
@@ -31,42 +46,54 @@ function parseCount(value: unknown) {
 
   if (typeof value === "string") {
     const parsed = Number.parseInt(value, 10);
-    return Number.isFinite(parsed) ? parsed : 0;
+    return Number.isFinite(parsed) ? parsed : viewBaseline;
   }
 
-  return 0;
+  return viewBaseline;
 }
 
-async function redisCommand(command: string, ...parts: string[]) {
-  const config = getRedisConfig();
+function normalizePath(value: unknown) {
+  return typeof value === "string" && value.startsWith("/") ? value : "/";
+}
 
-  if (!config) {
-    return null;
+async function getViewCount(client: NonNullable<ReturnType<typeof getSupabaseServerClient>>) {
+  const { data, error } = await client
+    .from("site_views")
+    .select("count")
+    .eq("id", totalViewsId)
+    .maybeSingle<ViewRow>();
+
+  if (error) {
+    throw error;
   }
 
-  const path = [command, ...parts].map(encodeURIComponent).join("/");
-  const response = await fetch(`${config.url}/${path}`, {
-    headers: {
-      Authorization: `Bearer ${config.token}`
-    },
-    cache: "no-store"
-  });
+  return parseCount(data?.count);
+}
 
-  if (!response.ok) {
-    throw new Error(`Redis command failed: ${response.status}`);
+async function incrementViewCount(
+  client: NonNullable<ReturnType<typeof getSupabaseServerClient>>,
+  rowId: string
+) {
+  const { data, error } = await client.rpc("increment_site_views", { row_id: rowId });
+
+  if (error) {
+    throw error;
   }
 
-  return (await response.json()) as RedisResponse;
+  return parseCount(data);
 }
 
 export async function GET() {
   try {
-    const data = await redisCommand("get", totalViewsKey);
-    const storedViews = data ? parseCount(data.result) : 0;
+    const client = getSupabaseServerClient();
+
+    if (!client) {
+      return NextResponse.json({ configured: false, views: viewBaseline });
+    }
 
     return NextResponse.json({
-      configured: data !== null,
-      views: viewBaseline + storedViews
+      configured: true,
+      views: await getViewCount(client)
     });
   } catch {
     return NextResponse.json({ configured: false, views: viewBaseline }, { status: 503 });
@@ -75,19 +102,23 @@ export async function GET() {
 
 export async function POST(request: Request) {
   try {
-    const body = (await request.json().catch(() => ({}))) as { path?: unknown };
-    const path = typeof body.path === "string" && body.path.startsWith("/") ? body.path : "/";
-    const total = await redisCommand("incr", totalViewsKey);
+    const client = getSupabaseServerClient();
 
-    if (!total) {
+    if (!client) {
       return NextResponse.json({ configured: false, views: viewBaseline });
     }
 
-    await redisCommand("incr", `${pathViewsPrefix}${path}`);
+    const body = (await request.json().catch(() => ({}))) as { path?: unknown };
+    const path = normalizePath(body.path);
+    const views = await incrementViewCount(client, totalViewsId);
+
+    await incrementViewCount(client, `${pathViewsPrefix}${path}`).catch(() => {
+      // Per-route counts are useful, but total count should still succeed if this fails.
+    });
 
     return NextResponse.json({
       configured: true,
-      views: viewBaseline + parseCount(total.result)
+      views
     });
   } catch {
     return NextResponse.json({ configured: false, views: viewBaseline }, { status: 503 });
