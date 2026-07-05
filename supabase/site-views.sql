@@ -4,6 +4,15 @@ create table if not exists public.site_views (
   updated_at timestamptz not null default now()
 );
 
+alter table public.site_views enable row level security;
+
+drop policy if exists "Allow public read access to site views" on public.site_views;
+create policy "Allow public read access to site views"
+on public.site_views
+for select
+to anon, authenticated
+using (true);
+
 insert into public.site_views (id, count)
 values ('total', 315)
 on conflict (id) do nothing;
@@ -13,7 +22,7 @@ returns bigint
 language plpgsql
 security definer
 set search_path = public
-as $$
+as $function$
 declare
   new_count bigint;
 begin
@@ -26,14 +35,14 @@ begin
     end
   )
   on conflict (id) do update
-  set count = site_views.count + 1,
+  set count = public.site_views.count + 1,
       updated_at = now()
   returning count into new_count;
 
   return new_count;
 end;
-$$;
+$function$;
 
 grant usage on schema public to anon, authenticated;
-grant select, insert, update on public.site_views to anon, authenticated;
+grant select on public.site_views to anon, authenticated;
 grant execute on function public.increment_site_views(text) to anon, authenticated;
