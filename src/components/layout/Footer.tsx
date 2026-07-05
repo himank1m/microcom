@@ -21,10 +21,6 @@ export function Footer() {
         <div>
           <div className="inline-flex flex-col">
             <BrandWordmark size="footer" />
-            <span className="mt-2 text-[0.65rem] font-medium uppercase tracking-[0.24em] text-muted-foreground">
-              Communications
-            </span>
-            <span className="mt-2 text-sm font-semibold text-accent">Secure. Connect. Support.</span>
           </div>
           <p className="mt-5 max-w-sm text-sm leading-6 text-muted-foreground">
             Enterprise technology solutions built around reliability.

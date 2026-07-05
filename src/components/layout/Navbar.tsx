@@ -33,13 +33,7 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         >
           <span className="relative inline-flex flex-col leading-none">
-            <BrandWordmark markClassName="transition duration-500 group-hover:-translate-y-0.5" />
-            <span className="mt-1 text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground sm:text-[0.62rem] sm:font-medium sm:tracking-[0.22em]">
-              Communications
-            </span>
-            <span className="mt-1 text-[0.64rem] font-medium tracking-[0.04em] text-primary/90 sm:text-[0.6rem] sm:tracking-[0.08em]">
-              Secure. Connect. Support.
-            </span>
+            <BrandWordmark className="transition duration-500 group-hover:-translate-y-0.5" />
           </span>
         </Link>
 
