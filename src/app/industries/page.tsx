@@ -22,6 +22,7 @@ export default function IndustriesPage() {
           <Reveal>
             <SectionHeading
               eyebrow="Industries"
+              level="h1"
               title="Supporting organizations across sectors including government, defence, and enterprise."
               description="Each sector brings its own operating conditions, infrastructure constraints, and reliability expectations. Microware approaches these environments with careful planning and professional support."
             />

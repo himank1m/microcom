@@ -67,6 +67,7 @@ export default function BlogsPage() {
             </nav>
             <SectionHeading
               eyebrow="Blogs"
+              level="h1"
               title="Clear technology guidance before you buy."
               description="Practical Microware Communications notes on CCTV, cameras, business PCs, workstations, networking, infrastructure, and choosing solutions that actually fit your needs."
             />

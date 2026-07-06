@@ -21,6 +21,7 @@ export default function PartnersPage() {
           <Reveal>
             <SectionHeading
               eyebrow="Technology Partners"
+              level="h1"
               title="Established brands, carefully integrated."
               description="Partner relationships help Microware deliver dependable IT, surveillance, networking, infrastructure, and collaboration solutions."
             />

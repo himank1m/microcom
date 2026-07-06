@@ -28,6 +28,7 @@ export default function ContactPage() {
           <div>
             <SectionHeading
               eyebrow="Contact"
+              level="h1"
               title="Schedule a Meeting"
               description="Share your requirements and Microware will review the environment, priorities, and next steps with care."
             />

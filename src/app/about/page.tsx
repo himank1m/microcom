@@ -22,6 +22,7 @@ export default function AboutPage() {
           <Reveal>
             <SectionHeading
               eyebrow="About Microware"
+              level="h1"
               title="Why Organizations Choose Microware"
               description="Microware Communications is an enterprise technology solutions partner based in Jammu, delivering reliable IT, surveillance, infrastructure, and software solutions for organizations across Northern India."
             />

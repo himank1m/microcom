@@ -25,6 +25,7 @@ export default function SolutionsPage() {
           <Reveal>
             <SectionHeading
               eyebrow="Solutions"
+              level="h1"
               title="Technology capabilities for organizations that value continuity."
               description="Microware Communications specifies, deploys, integrates, and supports solutions around real operational requirements, including experienced custom software and website development for organizations that need practical digital systems."
             />
