@@ -1,4 +1,3 @@
-import Image from "next/image";
 import { CalendarCheck, Phone } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { site } from "@/lib/utils";
@@ -29,19 +28,13 @@ export function Hero() {
             </Button>
           </div>
         </div>
-        <div className="hero-media w-full">
+        <div className="hero-media hidden w-full md:block">
           <div className="group relative mx-auto aspect-[16/8] max-w-5xl overflow-hidden rounded-lg bg-muted">
-            <div className="absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.008]">
-              <Image
-                src="/images/enterprise-technology-hero.png"
-                alt="Abstract enterprise infrastructure composition representing surveillance, networking, servers, displays, and software systems"
-                fill
-                priority
-                quality={62}
-                sizes="(min-width: 1024px) 52vw, calc(100vw - 2rem)"
-                className="object-cover"
-              />
-            </div>
+            <div
+              className="hero-visual-bg absolute inset-0 transition-transform duration-700 ease-out group-hover:scale-[1.008]"
+              role="img"
+              aria-label="Abstract enterprise infrastructure composition representing surveillance, networking, servers, displays, and software systems"
+            />
             <div className="absolute inset-0 bg-gradient-to-t from-background/10 via-transparent to-transparent" />
             <div className="hero-sheen" aria-hidden />
           </div>

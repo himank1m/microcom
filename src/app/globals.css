@@ -127,6 +127,14 @@ p {
   display: none;
 }
 
+@media (min-width: 768px) {
+  .hero-visual-bg {
+    background-image: url("/images/enterprise-technology-hero.png");
+    background-position: center;
+    background-size: cover;
+  }
+}
+
 .hero-enter:nth-child(2) {
   animation-delay: 80ms;
 }
