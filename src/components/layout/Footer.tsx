@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { site } from "@/lib/utils";
-import { solutions } from "@/data/solutions";
 import { ViewCounter } from "@/components/sections/ViewCounter";
 
 const quickLinks = [
@@ -10,6 +9,17 @@ const quickLinks = [
   ["About", "/about"],
   ["Partners", "/partners"],
   ["Contact", "/contact"]
+];
+
+const footerSolutions = [
+  ["Computer Dealer in Jammu", "/computer-dealer-jammu"],
+  ["CCTV Installation in Jammu", "/cctv-installation-jammu"],
+  ["EPABX Systems in Jammu", "/epabx-systems-jammu"],
+  ["Networking Solutions in Jammu", "/networking-solutions-jammu"],
+  ["Server Solutions in Jammu", "/server-solutions-jammu"],
+  ["Biometric Attendance in Jammu", "/biometric-attendance-jammu"],
+  ["Access Control Systems in Jammu", "/access-control-systems-jammu"],
+  ["AMC Services in Jammu", "/annual-maintenance-contract-jammu"]
 ];
 
 export function Footer() {
@@ -56,9 +66,9 @@ export function Footer() {
         <div>
           <p className="text-sm font-semibold text-foreground">Solutions</p>
           <div className="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
-            {solutions.slice(0, 8).map((solution) => (
-              <Link key={solution.title} href="/solutions" className="text-sm text-muted-foreground transition hover:text-primary">
-                {solution.title}
+            {footerSolutions.map(([label, href]) => (
+              <Link key={href} href={href} className="text-sm text-muted-foreground transition hover:text-primary">
+                {label}
               </Link>
             ))}
           </div>

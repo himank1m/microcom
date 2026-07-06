@@ -36,8 +36,8 @@ export default function SolutionsPage() {
         <div className="container">
           <Reveal>
             <SectionHeading
-              eyebrow="Service expertise"
-              title="Explore Microware capabilities in detail."
+              eyebrow="Services in Jammu"
+              title="Explore Microware services in detail."
               description="Find focused information for computers, CCTV, networking, software, websites, cabling, servers, cloud, security, and AMC support."
             />
           </Reveal>

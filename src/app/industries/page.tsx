@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { FinalCTA } from "@/components/sections/FinalCTA";
 import { IndustriesGrid } from "@/components/sections/IndustriesGrid";
+import { ServiceLinksBand } from "@/components/sections/ServiceLinksBand";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -28,6 +29,20 @@ export default function IndustriesPage() {
         </div>
       </section>
       <IndustriesGrid />
+      <ServiceLinksBand
+        title="Services matched to operational environments."
+        description="Different sectors need different infrastructure priorities. Explore the services most often connected to secure, reliable, multi-user environments."
+        serviceSlugs={[
+          "cctv-installation-jammu",
+          "access-control-systems-jammu",
+          "biometric-attendance-jammu",
+          "structured-cabling-jammu",
+          "wireless-networking-jammu",
+          "server-solutions-jammu",
+          "epabx-systems-jammu",
+          "cyber-security-jammu"
+        ]}
+      />
       <FinalCTA />
     </>
   );

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Approach } from "@/components/sections/Approach";
 import { FinalCTA } from "@/components/sections/FinalCTA";
+import { ServiceLinksBand } from "@/components/sections/ServiceLinksBand";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 
@@ -41,6 +42,21 @@ export default function AboutPage() {
         </div>
       </section>
       <Approach />
+      <ServiceLinksBand
+        eyebrow="Experience across services"
+        title="Technology areas Microware supports every day."
+        description="From computers and CCTV to software, websites, networks, servers, and AMC support, Microware brings practical experience across the systems organizations depend on."
+        serviceSlugs={[
+          "enterprise-it-solutions-jammu",
+          "computer-dealer-jammu",
+          "cctv-installation-jammu",
+          "software-solutions-jammu",
+          "it-infrastructure-jammu",
+          "annual-maintenance-contract-jammu",
+          "cloud-solutions-jammu",
+          "cyber-security-jammu"
+        ]}
+      />
       <FinalCTA />
     </>
   );
