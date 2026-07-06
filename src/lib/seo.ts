@@ -8,7 +8,8 @@ export const publicRoutes = [
   { path: "/solutions", priority: 0.9 },
   { path: "/industries", priority: 0.7 },
   { path: "/partners", priority: 0.65 },
-  { path: "/contact", priority: 0.85 }
+  { path: "/contact", priority: 0.85 },
+  { path: "/case-studies", priority: 0.72 }
 ] as const;
 
 export const seoKeywords = [

@@ -8,6 +8,7 @@ const quickLinks = [
   ["Industries", "/industries"],
   ["About", "/about"],
   ["Partners", "/partners"],
+  ["Recent Projects", "/case-studies"],
   ["Contact", "/contact"]
 ];
 
