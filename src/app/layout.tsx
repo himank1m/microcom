@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -55,6 +55,11 @@ export const metadata: Metadata = {
   }
 };
 
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1
+};
+
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" suppressHydrationWarning>
@@ -77,7 +82,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "setTimeout(function(){var el=document.getElementById('microware-view-count');if(!el)return;try{var v=localStorage.getItem('microware:views');if(v)el.textContent=String(parseInt(v,10)).padStart(6,'0')}catch(e){}fetch('/api/views?t='+Date.now(),{method:'POST',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname})}).then(function(r){return r.ok?r.json():null}).then(function(d){if(d&&typeof d.views==='number'){var x=String(d.views).padStart(6,'0');el.textContent=x;try{localStorage.setItem('microware:views',String(d.views))}catch(e){}}}).catch(function(){})},2200)"
+              "setTimeout(function(){var el=document.getElementById('microware-view-count');if(!el)return;try{var v=localStorage.getItem('microware:views');if(v)el.textContent=String(parseInt(v,10)).padStart(6,'0')}catch(e){}fetch('/api/views?t='+Date.now(),{method:'POST',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname})}).then(function(r){return r.ok?r.json():null}).then(function(d){if(d&&typeof d.views==='number'){var x=String(d.views).padStart(6,'0');el.textContent=x;try{localStorage.setItem('microware:views',String(d.views))}catch(e){}}}).catch(function(){})},8000)"
           }}
         />
       </body>
