@@ -65,10 +65,14 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-border py-5">
-        <div className="container flex flex-col gap-3 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>&copy; {new Date().getFullYear()} Microware Communications. All rights reserved.</p>
-          <ViewCounter />
-          <p className="text-accent">Made with love by Himank Magotra.</p>
+        <div className="container grid gap-4 text-sm text-muted-foreground">
+          <div className="flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
+            <p>&copy; {new Date().getFullYear()} Microware Communications. All rights reserved.</p>
+            <p className="text-accent">Made with love by Himank Magotra.</p>
+          </div>
+          <div className="flex justify-center">
+            <ViewCounter />
+          </div>
         </div>
       </div>
     </footer>
