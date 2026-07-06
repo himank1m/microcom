@@ -5,7 +5,17 @@ import { useState } from "react";
 import { Button } from "@/components/ui/Button";
 
 const organizationTypes = ["Business / Enterprise", "Government Department", "Defence / Military", "Manufacturing", "Other"];
-const requirementTypes = ["Surveillance & Security", "Enterprise Networking", "Servers & Infrastructure", "Custom Software", "Managed IT Services", "AMC Support", "Multiple Requirements"];
+const requirementTypes = [
+  "Surveillance & Security",
+  "Computing Solutions",
+  "Custom Software",
+  "Custom Website",
+  "Enterprise Networking",
+  "Servers & Infrastructure",
+  "Managed IT Services",
+  "AMC Support",
+  "Multiple Requirements"
+];
 
 export function ContactForm() {
   const router = useRouter();

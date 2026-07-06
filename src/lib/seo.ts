@@ -18,6 +18,9 @@ export const seoKeywords = [
   "enterprise IT solutions Jammu",
   "CCTV installation Jammu",
   "surveillance systems Jammu",
+  "custom software Jammu",
+  "custom website development Jammu",
+  "business website design Jammu",
   "enterprise networking Jammu",
   "server solutions Jammu",
   "structured cabling Jammu",
@@ -31,7 +34,7 @@ export const seoKeywords = [
 ];
 
 export const defaultDescription =
-  "Microware Communications delivers enterprise IT solutions, networking, CCTV, surveillance, biometric attendance, access control, servers, structured cabling, Wi-Fi, cloud solutions, and AMC support in Jammu.";
+  "Microware Communications delivers enterprise IT solutions, CCTV, computers, custom software, custom websites, networking, surveillance, servers, structured cabling, Wi-Fi, cloud solutions, and AMC support in Jammu.";
 
 export function absoluteUrl(path = "/") {
   return new URL(path, baseUrl).toString();
@@ -68,6 +71,8 @@ export const structuredData = [
       "Networking",
       "CCTV",
       "Surveillance systems",
+      "Custom software",
+      "Custom website development",
       "Biometric attendance",
       "Access control",
       "Servers",
@@ -83,6 +88,8 @@ export const structuredData = [
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Enterprise IT Solutions" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Networking and Structured Cabling" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "CCTV and Surveillance Systems" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Software Development" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "Custom Website Development" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Biometric Attendance and Access Control" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Servers and Infrastructure" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "Wi-Fi and Cloud Solutions" } },

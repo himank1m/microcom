@@ -73,7 +73,7 @@ export function Hero() {
               show: { opacity: 1, y: 0, filter: "blur(0px)", transition: { duration: 0.85, ease: [0.16, 1, 0.3, 1] } }
             }}
           >
-            Microware Communications builds reliable networking, surveillance, access control, server, Wi-Fi, and support systems for serious operating environments.
+            Microware Communications builds reliable CCTV, computers, networking, custom software, custom websites, server, Wi-Fi, and support systems with 25+ years of practical technology experience.
           </motion.p>
           <motion.div
             className="mt-9 flex flex-col justify-center gap-3 sm:flex-row"

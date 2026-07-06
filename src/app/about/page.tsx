@@ -31,7 +31,7 @@ export default function AboutPage() {
                 For more than 25 years, Microware Communications has supported organizations that need dependable technology infrastructure and a professional service environment, working with clients across Northern India.
               </p>
               <p>
-                The work spans enterprise IT, surveillance, networking, servers, software, managed services, and AMC support. The orientation is serious and practical: understand the environment, specify carefully, deploy with discipline, and remain available after installation.
+                The work spans enterprise IT, CCTV, computers, surveillance, networking, servers, custom software, custom websites, managed services, and AMC support. The orientation is serious and practical: understand the environment, specify carefully, deploy with discipline, and remain available after installation.
               </p>
               <p>
                 Reliability is the brand promise. Attention to detail is the working philosophy. Consistency in service, communication, and design is what helps organizations trust Microware with long-term technology requirements.

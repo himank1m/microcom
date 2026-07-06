@@ -8,6 +8,7 @@ import {
   PanelsTopLeft,
   Home,
   Code2,
+  Globe2,
   Wrench,
   ShieldCheck
 } from "lucide-react";
@@ -19,14 +20,24 @@ export const solutions = [
     icon: Camera
   },
   {
-    title: "Enterprise Networking",
-    description: "Network planning, structured cabling, routers, switches, Wi-Fi, and connectivity solutions.",
-    icon: Cable
-  },
-  {
     title: "Computing Solutions",
     description: "Laptops, desktops, workstations, and accessories specified for organizational use.",
     icon: Monitor
+  },
+  {
+    title: "Custom Software",
+    description: "Experienced development of tailored software systems for workflows, reporting, billing, operations, and internal teams.",
+    icon: Code2
+  },
+  {
+    title: "Custom Websites",
+    description: "Professional business websites, landing pages, and web experiences planned around credibility, speed, and lead generation.",
+    icon: Globe2
+  },
+  {
+    title: "Enterprise Networking",
+    description: "Network planning, structured cabling, routers, switches, Wi-Fi, and connectivity solutions.",
+    icon: Cable
   },
   {
     title: "Servers & Infrastructure",
@@ -52,11 +63,6 @@ export const solutions = [
     title: "Smart Home & Automation",
     description: "Smart home products and connected automation systems planned around practical use.",
     icon: Home
-  },
-  {
-    title: "Custom Software",
-    description: "Tailored software systems for organizational workflows, reporting, and operations.",
-    icon: Code2
   },
   {
     title: "Managed IT Services",
