@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { caseStudies } from "@/data/caseStudies";
+import { blogPosts } from "@/data/blogs";
 import { localServices } from "@/data/localServices";
 import { absoluteUrl, publicRoutes } from "@/lib/seo";
 
@@ -20,12 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.82
   }));
 
-  const caseStudyRoutes = caseStudies.map((caseStudy) => ({
-    url: absoluteUrl(`/case-studies/${caseStudy.slug}`),
+  const blogRoutes = blogPosts.map((post) => ({
+    url: absoluteUrl(`/blogs/${post.slug}`),
     lastModified,
     changeFrequency: "monthly" as const,
     priority: 0.68
   }));
 
-  return [...baseRoutes, ...serviceRoutes, ...caseStudyRoutes];
+  return [...baseRoutes, ...serviceRoutes, ...blogRoutes];
 }
