@@ -62,7 +62,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "try{var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}}catch(e){}"
+              "try{var d=document.documentElement,t=localStorage.getItem('theme');if(t==='dark'||(!t&&matchMedia('(prefers-color-scheme: dark)').matches))d.classList.add('dark');document.addEventListener('click',function(e){var b=e.target&&e.target.closest&&e.target.closest('[data-theme-toggle]');if(!b)return;var n=d.classList.contains('dark')?'light':'dark';d.classList.toggle('dark',n==='dark');localStorage.setItem('theme',n)})}catch(e){}"
           }}
         />
         <Navbar />
@@ -72,6 +72,12 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(structuredData).replace(/</g, "\\u003c")
+          }}
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html:
+              "(()=>{var s=()=>{var el=document.getElementById('microware-view-count');if(!el)return;try{var v=localStorage.getItem('microware:views');if(v)el.textContent=String(parseInt(v,10)).padStart(6,'0')}catch(e){}fetch('/api/views?t='+Date.now(),{method:'POST',cache:'no-store',headers:{'Content-Type':'application/json'},body:JSON.stringify({path:location.pathname})}).then(r=>r.ok?r.json():null).then(d=>{if(d&&typeof d.views==='number'){var x=String(d.views).padStart(6,'0');el.textContent=x;try{localStorage.setItem('microware:views',String(d.views))}catch(e){}}}).catch(()=>{})};'requestIdleCallback'in window?requestIdleCallback(s,{timeout:3000}):setTimeout(s,1800)})()"
           }}
         />
       </body>

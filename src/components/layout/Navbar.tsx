@@ -1,12 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { Menu, Phone, X } from "lucide-react";
-import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { Menu, Phone } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { cn, site } from "@/lib/utils";
+import { site } from "@/lib/utils";
 
 const navItems = [
   { href: "/", label: "Home" },
@@ -18,9 +14,6 @@ const navItems = [
 ];
 
 export function Navbar() {
-  const pathname = usePathname();
-  const [open, setOpen] = useState(false);
-
   return (
     <header className="sticky top-0 z-50 border-b border-border/80 bg-white/82 shadow-[0_1px_0_rgba(0,0,0,0.03)] backdrop-blur-xl dark:bg-black/82 dark:shadow-[0_1px_0_rgba(244,63,94,0.1)]">
       <nav className="container flex min-h-24 items-center justify-between gap-3 sm:min-h-20 sm:gap-4" aria-label="Main navigation">
@@ -28,7 +21,6 @@ export function Navbar() {
           href="/"
           className="focus-ring group flex items-center rounded-md py-2"
           aria-label="Microware Communications - Look No Further"
-          onClick={() => setOpen(false)}
         >
           <span className="relative inline-flex flex-col leading-none">
             <span className="relative inline-flex items-baseline text-[1.58rem] font-semibold tracking-[-0.035em] sm:text-[1.65rem]">
@@ -56,15 +48,9 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className={cn(
-                "focus-ring relative rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:text-foreground",
-                pathname === item.href && "text-primary"
-              )}
+              className="focus-ring rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:bg-primary/10 hover:text-foreground"
             >
-              {pathname === item.href ? (
-                <span className="absolute inset-0 rounded-md bg-primary/10" aria-hidden />
-              ) : null}
-              <span className="relative z-10">{item.label}</span>
+              {item.label}
             </Link>
           ))}
         </div>
@@ -86,37 +72,29 @@ export function Navbar() {
             <Phone className="size-4" aria-hidden />
           </a>
           <ThemeToggle />
-          <button
-            type="button"
-            className="focus-ring inline-flex size-10 items-center justify-center rounded-md border border-border bg-card text-foreground"
-            onClick={() => setOpen((value) => !value)}
-            aria-label="Toggle menu"
-            aria-expanded={open}
-          >
-            {open ? <X className="size-5" aria-hidden /> : <Menu className="size-5" aria-hidden />}
-          </button>
+          <details className="mobile-menu-details">
+            <summary
+              className="focus-ring inline-flex size-10 cursor-pointer list-none items-center justify-center rounded-md border border-border bg-card text-foreground"
+              aria-label="Toggle menu"
+            >
+              <Menu className="size-5" aria-hidden />
+            </summary>
+            <div className="mobile-menu-panel absolute inset-x-0 top-full border-t border-border bg-white dark:bg-black">
+              <div className="container grid gap-1 py-4">
+                {navItems.map((item) => (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="focus-ring block rounded-md px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+                  >
+                    {item.label}
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </details>
         </div>
       </nav>
-
-      {open ? (
-        <div className="mobile-menu-panel border-t border-border bg-white lg:hidden dark:bg-black">
-          <div className="container grid gap-1 py-4">
-            {navItems.map((item) => (
-              <Link
-                key={item.href}
-                href={item.href}
-                onClick={() => setOpen(false)}
-                className={cn(
-                  "focus-ring block rounded-md px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground",
-                  pathname === item.href && "bg-primary/10 text-primary"
-                )}
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </div>
-      ) : null}
     </header>
   );
 }
