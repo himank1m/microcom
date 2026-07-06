@@ -54,10 +54,24 @@ export function ViewCounter() {
         .catch(() => {});
     };
 
-    trackView();
+    let idleCallback: number | null = null;
+    let timeout: ReturnType<typeof globalThis.setTimeout> | null = null;
+
+    if (typeof window.requestIdleCallback === "function") {
+      idleCallback = window.requestIdleCallback(trackView, { timeout: 2500 });
+    } else {
+      timeout = globalThis.setTimeout(trackView, 1200);
+    }
 
     return () => {
       controller.abort();
+      if (idleCallback !== null) {
+        window.cancelIdleCallback(idleCallback);
+      }
+
+      if (timeout !== null) {
+        globalThis.clearTimeout(timeout);
+      }
     };
   }, []);
 

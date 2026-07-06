@@ -6,7 +6,7 @@
   --background: 0 0% 99%;
   --foreground: 217 80% 12%;
   --muted: 220 14% 95%;
-  --muted-foreground: 216 24% 42%;
+  --muted-foreground: 216 28% 34%;
   --border: 213 45% 88%;
   --card: 0 0% 100%;
   --card-foreground: 217 80% 12%;
@@ -19,7 +19,7 @@
   --background: 0 0% 3%;
   --foreground: 355 42% 84%;
   --muted: 0 0% 9%;
-  --muted-foreground: 355 18% 62%;
+  --muted-foreground: 355 22% 72%;
   --border: 355 24% 18%;
   --card: 220 8% 7%;
   --card-foreground: 355 42% 84%;
@@ -115,6 +115,30 @@ p {
   animation: hero-sheen 6.5s cubic-bezier(0.22, 1, 0.36, 1) 1.2s infinite;
 }
 
+.hero-enter,
+.hero-media,
+.content-reveal,
+.mobile-menu-panel {
+  animation: surface-in 650ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  will-change: transform, opacity;
+}
+
+.hero-enter:nth-child(2) {
+  animation-delay: 80ms;
+}
+
+.hero-enter:nth-child(3) {
+  animation-delay: 150ms;
+}
+
+.hero-enter:nth-child(4) {
+  animation-delay: 220ms;
+}
+
+.hero-media {
+  animation-delay: 260ms;
+}
+
 @keyframes ambient-drift {
   from {
     transform: translate3d(-1.5%, -1%, 0) scale(1);
@@ -122,6 +146,18 @@ p {
 
   to {
     transform: translate3d(1.5%, 1%, 0) scale(1.04);
+  }
+}
+
+@keyframes surface-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 18px, 0) scale(0.99);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0) scale(1);
   }
 }
 
