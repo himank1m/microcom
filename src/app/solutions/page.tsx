@@ -36,9 +36,9 @@ export default function SolutionsPage() {
         <div className="container">
           <Reveal>
             <SectionHeading
-              eyebrow="Local SEO service pages"
-              title="Dedicated IT service pages for Jammu organizations."
-              description="Explore focused service pages for computers, CCTV, networking, software, websites, cabling, servers, cloud, security, and AMC support."
+              eyebrow="Service expertise"
+              title="Explore Microware capabilities in detail."
+              description="Find focused information for computers, CCTV, networking, software, websites, cabling, servers, cloud, security, and AMC support."
             />
           </Reveal>
           <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
@@ -49,7 +49,7 @@ export default function SolutionsPage() {
                     <h2 className="text-lg font-semibold text-foreground">{service.title}</h2>
                     <p className="mt-3 text-sm leading-6 text-muted-foreground">{service.hero}</p>
                     <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-primary">
-                      View local service <ArrowRight className="size-4 transition group-hover:translate-x-1" aria-hidden />
+                      View service <ArrowRight className="size-4 transition group-hover:translate-x-1" aria-hidden />
                     </span>
                   </Card>
                 </Link>
