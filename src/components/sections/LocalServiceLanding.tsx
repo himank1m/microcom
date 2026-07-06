@@ -40,7 +40,7 @@ export function LocalServiceLanding({ relatedServices, service }: LocalServiceLa
                   src="/images/enterprise-technology-hero.png"
                   alt={`${service.title} by Microware Communications`}
                   fill
-                  sizes="(min-width: 1024px) 38vw, 100vw"
+                  sizes="(min-width: 1024px) 38vw, calc(100vw - 2rem)"
                   className="object-cover"
                 />
               </div>

@@ -37,7 +37,7 @@ export function Hero() {
                 alt="Abstract enterprise infrastructure composition representing surveillance, networking, servers, displays, and software systems"
                 fill
                 priority
-                sizes="(min-width: 1024px) 52vw, 100vw"
+                sizes="(min-width: 1024px) 52vw, calc(100vw - 2rem)"
                 className="object-cover"
               />
             </div>
