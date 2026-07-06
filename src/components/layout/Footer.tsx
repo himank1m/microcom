@@ -12,22 +12,11 @@ const quickLinks = [
   ["Contact", "/contact"]
 ];
 
-const footerSolutions = [
-  ["Computer Dealer in Jammu", "/computer-dealer-jammu"],
-  ["CCTV Installation in Jammu", "/cctv-installation-jammu"],
-  ["EPABX Systems in Jammu", "/epabx-systems-jammu"],
-  ["Networking Solutions in Jammu", "/networking-solutions-jammu"],
-  ["Server Solutions in Jammu", "/server-solutions-jammu"],
-  ["Biometric Attendance in Jammu", "/biometric-attendance-jammu"],
-  ["Access Control Systems in Jammu", "/access-control-systems-jammu"],
-  ["AMC Services in Jammu", "/annual-maintenance-contract-jammu"]
-];
-
 export function Footer() {
   return (
     <footer className="border-t border-border bg-white text-foreground dark:bg-black dark:text-foreground">
       <div className="h-px bg-gradient-to-r from-transparent via-border to-transparent" />
-      <div className="container grid gap-10 py-14 md:grid-cols-[1.3fr_0.7fr_1fr]">
+      <div className="container grid gap-10 py-14 md:grid-cols-[1.3fr_0.7fr]">
         <div>
           <div className="inline-flex flex-col">
             <span className="relative inline-flex items-baseline text-[1.8rem] font-semibold leading-none tracking-[-0.035em]">
@@ -58,16 +47,6 @@ export function Footer() {
           <p className="text-sm font-semibold text-foreground">Quick Links</p>
           <div className="mt-4 grid gap-2">
             {quickLinks.map(([label, href]) => (
-              <Link key={href} href={href} className="text-sm text-muted-foreground transition hover:text-primary">
-                {label}
-              </Link>
-            ))}
-          </div>
-        </div>
-        <div>
-          <p className="text-sm font-semibold text-foreground">Solutions</p>
-          <div className="mt-4 grid gap-2 sm:grid-cols-2 md:grid-cols-1 lg:grid-cols-2">
-            {footerSolutions.map(([label, href]) => (
               <Link key={href} href={href} className="text-sm text-muted-foreground transition hover:text-primary">
                 {label}
               </Link>
