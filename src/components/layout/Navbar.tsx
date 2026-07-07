@@ -48,7 +48,7 @@ export function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="focus-ring rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:bg-primary/10 hover:text-foreground"
+              className="nav-link-motion focus-ring rounded-md px-3 py-2 text-sm font-medium text-muted-foreground transition-colors duration-300 hover:bg-primary/10 hover:text-foreground"
             >
               {item.label}
             </Link>
@@ -77,7 +77,7 @@ export function Navbar() {
               className="focus-ring inline-flex size-10 cursor-pointer list-none items-center justify-center rounded-md border border-border bg-card text-foreground"
               aria-label="Toggle menu"
             >
-              <Menu className="size-5" aria-hidden />
+              <Menu className="menu-glyph size-5" aria-hidden />
             </summary>
             <div className="mobile-menu-panel absolute inset-x-0 top-full border-t border-border bg-white dark:bg-black">
               <div className="container grid gap-1 py-4">
@@ -85,7 +85,7 @@ export function Navbar() {
                   <Link
                     key={item.href}
                     href={item.href}
-                    className="focus-ring block rounded-md px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
+                    className="nav-link-motion focus-ring block rounded-md px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted hover:text-foreground"
                   >
                     {item.label}
                   </Link>

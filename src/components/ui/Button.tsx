@@ -28,7 +28,7 @@ const styles = {
 
 export function Button({ variant = "primary", className, children, ...props }: LinkProps | NativeButtonProps) {
   const classes = cn(
-    "focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
+    "button-motion focus-ring inline-flex min-h-11 items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)]",
     styles[variant],
     className
   );
