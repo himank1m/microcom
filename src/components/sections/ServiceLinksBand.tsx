@@ -12,7 +12,7 @@ type ServiceLinksBandProps = {
   title: string;
 };
 
-export function ServiceLinksBand({ description, eyebrow = "Services in Jammu", serviceSlugs, title }: ServiceLinksBandProps) {
+export function ServiceLinksBand({ description, eyebrow = "Service expertise", serviceSlugs, title }: ServiceLinksBandProps) {
   const services = serviceSlugs
     .map((slug) => getLocalService(slug))
     .filter((service): service is LocalServicePage => Boolean(service));

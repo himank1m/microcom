@@ -25,7 +25,7 @@ export function LocalServiceLanding({ relatedServices, service }: LocalServiceLa
               <span aria-hidden>/</span>
               <span className="text-foreground">{service.title}</span>
             </nav>
-            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Local service in Jammu</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-primary">Service expertise</p>
             <h1 className="text-balance text-4xl font-semibold leading-tight text-foreground sm:text-5xl lg:text-6xl">{service.title}</h1>
             <p className="mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">{service.hero}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -56,7 +56,7 @@ export function LocalServiceLanding({ relatedServices, service }: LocalServiceLa
           <Reveal>
             <div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Overview</p>
-              <h2 className="mt-3 text-3xl font-semibold text-foreground">Professional {service.title.toLowerCase()} for organizations in Jammu.</h2>
+              <h2 className="mt-3 text-3xl font-semibold text-foreground">Professional {service.title.toLowerCase()} for organizations.</h2>
             </div>
           </Reveal>
           <Reveal>
@@ -96,7 +96,7 @@ export function LocalServiceLanding({ relatedServices, service }: LocalServiceLa
           <Reveal>
             <Card className="h-full">
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-primary">Why choose Microware Communications</p>
-              <h2 className="mt-3 text-3xl font-semibold text-foreground">Experienced local technology partner</h2>
+              <h2 className="mt-3 text-3xl font-semibold text-foreground">Experienced technology partner</h2>
               <p className="mt-5 text-base leading-7 text-muted-foreground">
                 Microware Communications brings 25+ years of practical IT, infrastructure, surveillance, software, and support experience to organizations that need dependable guidance before and after deployment.
               </p>

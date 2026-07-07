@@ -8,7 +8,7 @@ import { Reveal } from "@/components/ui/Reveal";
 export const metadata: Metadata = {
   title: "Industries We Serve",
   description:
-    "Microware Communications supports businesses, government departments, defence environments, and manufacturing across Northern India.",
+    "Microware Communications supports businesses, government departments, defence environments, manufacturing, and enterprise organizations.",
   alternates: {
     canonical: "/industries"
   }

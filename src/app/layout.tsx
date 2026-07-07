@@ -7,7 +7,7 @@ import { absoluteUrl, baseUrl, defaultDescription, seoKeywords, structuredData }
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: "Microware Communications | Enterprise IT Solutions in Jammu",
+    default: "Microware Communications | Enterprise IT Solutions",
     template: "%s | Microware Communications"
   },
   description: defaultDescription,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     }
   },
   openGraph: {
-    title: "Microware Communications | Enterprise IT Solutions in Jammu",
+    title: "Microware Communications | Enterprise IT Solutions",
     description: defaultDescription,
     url: baseUrl,
     siteName: "Microware Communications",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Microware Communications | Enterprise IT Solutions in Jammu",
+    title: "Microware Communications | Enterprise IT Solutions",
     description: defaultDescription,
     images: [absoluteUrl("/images/enterprise-technology-hero.png")]
   }

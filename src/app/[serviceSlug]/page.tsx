@@ -71,7 +71,7 @@ function createJsonLd(service: NonNullable<ReturnType<typeof getLocalService>>) 
       email: site.email,
       telephone: `+91${site.phone}`,
       image: absoluteUrl("/images/enterprise-technology-hero.png"),
-      areaServed: ["Jammu", "Jammu & Kashmir", "Northern India"],
+      areaServed: ["India"],
       priceRange: "$$"
     },
     {
@@ -84,8 +84,8 @@ function createJsonLd(service: NonNullable<ReturnType<typeof getLocalService>>) 
         "@id": `${baseUrl}/#localbusiness`
       },
       areaServed: {
-        "@type": "City",
-        name: "Jammu"
+        "@type": "Country",
+        name: "India"
       },
       serviceType: service.title,
       url: serviceUrl

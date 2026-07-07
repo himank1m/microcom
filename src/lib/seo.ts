@@ -14,28 +14,27 @@ export const publicRoutes = [
 
 export const seoKeywords = [
   "Microware Communications",
-  "Microware Communications Jammu",
-  "IT solutions Jammu",
-  "enterprise IT solutions Jammu",
-  "CCTV installation Jammu",
-  "surveillance systems Jammu",
-  "custom software Jammu",
-  "custom website development Jammu",
-  "business website design Jammu",
-  "enterprise networking Jammu",
-  "server solutions Jammu",
-  "structured cabling Jammu",
-  "Wi-Fi solutions Jammu",
-  "biometric attendance Jammu",
-  "access control Jammu",
-  "cloud solutions Jammu",
-  "IT AMC services Jammu",
-  "government IT solutions Jammu",
-  "defence technology solutions Jammu"
+  "IT solutions",
+  "enterprise IT solutions",
+  "CCTV installation",
+  "surveillance systems",
+  "custom software",
+  "custom website development",
+  "business website design",
+  "enterprise networking",
+  "server solutions",
+  "structured cabling",
+  "Wi-Fi solutions",
+  "biometric attendance",
+  "access control",
+  "cloud solutions",
+  "IT AMC services",
+  "government IT solutions",
+  "defence technology solutions"
 ];
 
 export const defaultDescription =
-  "Microware Communications delivers enterprise IT solutions, CCTV, computers, custom software, custom websites, networking, surveillance, servers, structured cabling, Wi-Fi, cloud solutions, and AMC support in Jammu.";
+  "Microware Communications delivers enterprise IT solutions, CCTV, computers, custom software, custom websites, networking, surveillance, servers, structured cabling, Wi-Fi, cloud solutions, and AMC support.";
 
 export function absoluteUrl(path = "/") {
   return new URL(path, baseUrl).toString();
@@ -52,7 +51,7 @@ export const structuredData = [
     slogan: site.tagline,
     email: site.email,
     telephone: `+91${site.phone}`,
-    areaServed: ["Jammu", "Jammu & Kashmir", "Northern India"],
+    areaServed: ["India"],
     foundingDate: "1999"
   },
   {
@@ -66,7 +65,7 @@ export const structuredData = [
     email: site.email,
     telephone: `+91${site.phone}`,
     priceRange: "$$",
-    areaServed: ["Jammu", "Jammu & Kashmir", "Northern India"],
+    areaServed: ["India"],
     knowsAbout: [
       "Enterprise IT solutions",
       "Networking",

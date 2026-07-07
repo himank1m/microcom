@@ -1,4 +1,4 @@
-export type LocalServicePage = {
+﻿export type LocalServicePage = {
   benefits: string[];
   faqs: Array<{ answer: string; question: string }>;
   hero: string;
@@ -17,8 +17,8 @@ export type LocalServicePage = {
 function serviceFaqs(service: string, outcome: string, planning: string, support: string) {
   return [
     {
-      question: `Do you provide ${service} in Jammu?`,
-      answer: `Yes. Microware Communications supports ${service.toLowerCase()} requirements for organizations in Jammu and nearby areas, with planning, supply, deployment, and after-service support handled professionally.`
+      question: `Do you provide ${service} for organizations?`,
+      answer: `Yes. Microware Communications supports ${service.toLowerCase()} requirements for organizations, with planning, supply, deployment, and after-service support handled professionally.`
     },
     {
       question: `Can you inspect our site before suggesting ${service.toLowerCase()}?`,
@@ -54,13 +54,13 @@ function serviceFaqs(service: string, outcome: string, planning: string, support
 export const localServices: LocalServicePage[] = [
   {
     slug: "computer-dealer-jammu",
-    title: "Computer Dealer in Jammu",
-    metaTitle: "Computer Dealer in Jammu | Microware Communications",
+    title: "Computer Dealer",
+    metaTitle: "Computer Dealer | Microware Communications",
     metaDescription:
-      "Microware Communications is a computer dealer in Jammu supplying laptops, desktops, workstations, accessories, setup, and IT support for organizations.",
+      "Microware Communications is a computer dealer supplying laptops, desktops, workstations, accessories, setup, and IT support for organizations.",
     hero: "Reliable computers and workplace IT for serious business environments.",
     intro:
-      "Microware Communications helps organizations in Jammu choose dependable computers, laptops, desktops, workstations, and accessories that match real operating needs rather than generic specifications.",
+      "Microware Communications helps organizations choose dependable computers, laptops, desktops, workstations, and accessories that match real operating needs rather than generic specifications.",
     overview: [
       "Computer procurement is not just about buying a machine. Businesses need the right configuration, warranty, compatibility, software readiness, and service support so daily work does not stop because of avoidable hardware decisions.",
       "With 25+ years of technology experience, Microware supports buyers with product selection, setup, networking readiness, peripheral planning, and ongoing service for offices, institutions, and operational teams."
@@ -74,13 +74,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "cctv-installation-jammu",
-    title: "CCTV Installation in Jammu",
-    metaTitle: "CCTV Installation Jammu | Microware Communications",
+    title: "CCTV Installation",
+    metaTitle: "CCTV Installation | Microware Communications",
     metaDescription:
-      "Professional CCTV installation in Jammu for offices, institutions, shops, warehouses, and secure facilities with planning, setup, monitoring, and support.",
+      "Professional CCTV installation for offices, institutions, shops, warehouses, and secure facilities with planning, setup, monitoring, and support.",
     hero: "Professionally planned CCTV systems for visibility, deterrence, and control.",
     intro:
-      "Microware Communications designs and installs CCTV systems in Jammu for organizations that need clear coverage, dependable recording, secure access, and practical long-term service.",
+      "Microware Communications designs and installs CCTV systems for organizations that need clear coverage, dependable recording, secure access, and practical long-term service.",
     overview: [
       "A good CCTV deployment begins with camera placement, lighting, storage, network capacity, and monitoring expectations. Random camera installation often creates blind spots, weak footage, and service problems later.",
       "Microware brings practical surveillance experience across offices, institutions, shops, warehouses, public-facing areas, and controlled environments where evidence quality and uptime matter."
@@ -94,13 +94,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "epabx-systems-jammu",
-    title: "EPABX Systems in Jammu",
-    metaTitle: "EPABX Systems Jammu | Microware Communications",
+    title: "EPABX Systems",
+    metaTitle: "EPABX Systems | Microware Communications",
     metaDescription:
-      "EPABX systems in Jammu for offices, institutions, hotels, and organizations needing structured internal calling and communication setup.",
+      "EPABX systems for offices, institutions, hotels, and organizations needing structured internal calling and communication setup.",
     hero: "Organized voice communication for offices, departments, and multi-user facilities.",
     intro:
-      "Microware Communications provides EPABX planning and setup for organizations in Jammu that need professional internal calling, extension management, and smoother front-desk communication.",
+      "Microware Communications provides EPABX planning and setup for organizations that need professional internal calling, extension management, and smoother front-desk communication.",
     overview: [
       "EPABX systems help teams route calls, manage extensions, connect departments, and reduce communication confusion in busy facilities. The right setup depends on users, floors, departments, cabling, and call flow.",
       "Microware approaches EPABX as part of the broader IT and infrastructure environment, making sure voice systems fit with cabling, network rooms, reception operations, and future expansion."
@@ -114,13 +114,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "networking-solutions-jammu",
-    title: "Networking Solutions in Jammu",
-    metaTitle: "Networking Solutions Jammu | Microware Communications",
+    title: "Networking Solutions",
+    metaTitle: "Networking Solutions | Microware Communications",
     metaDescription:
-      "Enterprise networking solutions in Jammu including routers, switches, LAN planning, structured connectivity, Wi-Fi integration, and support.",
+      "Enterprise networking solutions including routers, switches, LAN planning, structured connectivity, Wi-Fi integration, and support.",
     hero: "Stable networks that keep people, devices, cameras, and servers connected.",
     intro:
-      "Microware Communications delivers networking solutions in Jammu for organizations that need dependable LAN, switching, routing, Wi-Fi, surveillance connectivity, and scalable infrastructure.",
+      "Microware Communications delivers networking solutions for organizations that need dependable LAN, switching, routing, Wi-Fi, surveillance connectivity, and scalable infrastructure.",
     overview: [
       "Modern offices depend on network performance for internet, file sharing, cloud tools, CCTV, attendance, printers, servers, and collaboration systems. Weak network planning creates recurring downtime and slow work.",
       "Microware designs networks around actual device count, bandwidth needs, security expectations, cable quality, rack readiness, and future expansion so the setup remains manageable."
@@ -134,13 +134,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "server-solutions-jammu",
-    title: "Server Solutions in Jammu",
-    metaTitle: "Server Solutions Jammu | Microware Communications",
+    title: "Server Solutions",
+    metaTitle: "Server Solutions | Microware Communications",
     metaDescription:
-      "Server solutions in Jammu for businesses and institutions, including planning, deployment, storage, backup readiness, and infrastructure support.",
+      "Server solutions for businesses and institutions, including planning, deployment, storage, backup readiness, and infrastructure support.",
     hero: "Server infrastructure planned for reliability, access, and business continuity.",
     intro:
-      "Microware Communications helps Jammu organizations plan and deploy server solutions for file storage, applications, user access, backup readiness, and centralized operations.",
+      "Microware Communications helps organizations plan and deploy server solutions for file storage, applications, user access, backup readiness, and centralized operations.",
     overview: [
       "Servers sit at the center of many business workflows. Poor sizing, weak power planning, missing backups, or unmanaged access can create operational risk and expensive downtime.",
       "Microware supports server selection, installation environment, network readiness, storage planning, user access, and post-deployment service so the infrastructure remains dependable."
@@ -154,13 +154,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "wireless-networking-jammu",
-    title: "Wireless Networking in Jammu",
-    metaTitle: "Wireless Networking Jammu | Wi-Fi Solutions",
+    title: "Wireless Networking",
+    metaTitle: "Wireless Networking | Wi-Fi Solutions",
     metaDescription:
-      "Wireless networking and Wi-Fi solutions in Jammu for offices, campuses, hotels, institutions, and enterprise environments.",
+      "Wireless networking and Wi-Fi solutions for offices, campuses, hotels, institutions, and enterprise environments.",
     hero: "Professional Wi-Fi coverage for teams, guests, devices, and operations.",
     intro:
-      "Microware Communications plans wireless networking in Jammu for organizations that need stable coverage, controlled access, and dependable Wi-Fi performance across rooms, floors, or campuses.",
+      "Microware Communications plans wireless networking for organizations that need stable coverage, controlled access, and dependable Wi-Fi performance across rooms, floors, or campuses.",
     overview: [
       "Wi-Fi performance depends on more than installing access points. Walls, floors, user density, roaming, bandwidth, interference, and security policies all affect the final experience.",
       "Microware approaches wireless networking with coverage planning, access point placement, network segmentation, and support readiness for business environments."
@@ -174,13 +174,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "structured-cabling-jammu",
-    title: "Structured Cabling in Jammu",
-    metaTitle: "Structured Cabling Jammu | Microware Communications",
+    title: "Structured Cabling",
+    metaTitle: "Structured Cabling | Microware Communications",
     metaDescription:
-      "Structured cabling in Jammu for offices, CCTV, servers, Wi-Fi, voice, and enterprise network infrastructure.",
+      "Structured cabling for offices, CCTV, servers, Wi-Fi, voice, and enterprise network infrastructure.",
     hero: "Clean cabling that makes networks easier to manage, support, and expand.",
     intro:
-      "Microware Communications provides structured cabling in Jammu for organizations that need neat, documented, and dependable connectivity for computers, cameras, Wi-Fi, servers, and voice systems.",
+      "Microware Communications provides structured cabling for organizations that need neat, documented, and dependable connectivity for computers, cameras, Wi-Fi, servers, and voice systems.",
     overview: [
       "Cabling quality affects every connected system. Untidy or undocumented cabling makes troubleshooting slower, upgrades harder, and downtime more likely.",
       "Microware plans cable routes, termination points, racks, labeling, testing, and future capacity so the physical layer supports long-term reliability."
@@ -194,13 +194,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "biometric-attendance-jammu",
-    title: "Biometric Attendance in Jammu",
-    metaTitle: "Biometric Attendance Jammu | Microware Communications",
+    title: "Biometric Attendance",
+    metaTitle: "Biometric Attendance | Microware Communications",
     metaDescription:
-      "Biometric attendance systems in Jammu for offices, institutions, factories, and departments needing reliable staff attendance tracking.",
+      "Biometric attendance systems for offices, institutions, factories, and departments needing reliable staff attendance tracking.",
     hero: "Attendance systems that simplify daily workforce tracking and reporting.",
     intro:
-      "Microware Communications deploys biometric attendance systems in Jammu for organizations that need reliable employee tracking, reporting, device setup, and support.",
+      "Microware Communications deploys biometric attendance systems for organizations that need reliable employee tracking, reporting, device setup, and support.",
     overview: [
       "Attendance systems must match shift patterns, user count, reporting requirements, and site conditions. A poorly configured device can create inaccurate records and administrative frustration.",
       "Microware supports device selection, installation, enrollment guidance, report configuration, and integration planning for practical attendance management."
@@ -214,13 +214,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "access-control-systems-jammu",
-    title: "Access Control Systems in Jammu",
-    metaTitle: "Access Control Systems Jammu | Microware Communications",
+    title: "Access Control Systems",
+    metaTitle: "Access Control Systems | Microware Communications",
     metaDescription:
-      "Access control systems in Jammu for offices, restricted rooms, institutions, and secure environments needing controlled entry.",
+      "Access control systems for offices, restricted rooms, institutions, and secure environments needing controlled entry.",
     hero: "Controlled entry for rooms, departments, and sensitive operating areas.",
     intro:
-      "Microware Communications provides access control systems in Jammu for organizations that need to manage who enters important spaces and when.",
+      "Microware Communications provides access control systems for organizations that need to manage who enters important spaces and when.",
     overview: [
       "Access control protects sensitive rooms, equipment areas, records, server spaces, and operational zones. The right system depends on door type, user levels, emergency needs, and administration workflow.",
       "Microware plans devices, locks, exit buttons, power, cabling, user permissions, and support so access control works smoothly in everyday use."
@@ -234,13 +234,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "cloud-solutions-jammu",
-    title: "Cloud Solutions in Jammu",
-    metaTitle: "Cloud Solutions Jammu | Microware Communications",
+    title: "Cloud Solutions",
+    metaTitle: "Cloud Solutions | Microware Communications",
     metaDescription:
-      "Cloud solutions in Jammu for businesses needing email, storage, backup, collaboration, migration support, and hybrid IT planning.",
+      "Cloud solutions for businesses needing email, storage, backup, collaboration, migration support, and hybrid IT planning.",
     hero: "Cloud planning that keeps data accessible, protected, and easier to manage.",
     intro:
-      "Microware Communications supports cloud solutions in Jammu for organizations that need better collaboration, data access, backup readiness, and practical migration guidance.",
+      "Microware Communications supports cloud solutions for organizations that need better collaboration, data access, backup readiness, and practical migration guidance.",
     overview: [
       "Cloud adoption should be planned around users, data sensitivity, internet reliability, backup needs, and existing systems. Moving too quickly without structure can create access and security issues.",
       "Microware helps organizations choose practical cloud services, prepare users, migrate carefully, and maintain a balance between cloud and local infrastructure."
@@ -254,13 +254,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "cyber-security-jammu",
-    title: "Cyber Security in Jammu",
-    metaTitle: "Cyber Security Jammu | Microware Communications",
+    title: "Cyber Security",
+    metaTitle: "Cyber Security | Microware Communications",
     metaDescription:
-      "Cyber security solutions in Jammu for organizations needing safer networks, endpoint protection, access control, firewall planning, and practical security guidance.",
+      "Cyber security solutions for organizations needing safer networks, endpoint protection, access control, firewall planning, and practical security guidance.",
     hero: "Practical cyber security for everyday business networks and users.",
     intro:
-      "Microware Communications helps organizations in Jammu strengthen cyber security through safer networks, endpoint protection, access discipline, and practical risk reduction.",
+      "Microware Communications helps organizations strengthen cyber security through safer networks, endpoint protection, access discipline, and practical risk reduction.",
     overview: [
       "Security is not only a software product. It includes network design, user practices, passwords, backups, device hygiene, remote access, and the discipline to keep systems updated.",
       "Microware focuses on realistic security improvements that fit the organization’s size, infrastructure, and operational risk."
@@ -274,13 +274,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "enterprise-it-solutions-jammu",
-    title: "Enterprise IT Solutions in Jammu",
-    metaTitle: "Enterprise IT Solutions Jammu | Microware Communications",
+    title: "Enterprise IT Solutions",
+    metaTitle: "Enterprise IT Solutions | Microware Communications",
     metaDescription:
-      "Enterprise IT solutions in Jammu covering computers, CCTV, networking, servers, software, websites, cloud, security, and AMC support.",
+      "Enterprise IT solutions covering computers, CCTV, networking, servers, software, websites, cloud, security, and AMC support.",
     hero: "A single technology partner for infrastructure, security, software, and support.",
     intro:
-      "Microware Communications delivers enterprise IT solutions in Jammu for organizations that want dependable technology planning, supply, deployment, integration, and long-term support.",
+      "Microware Communications delivers enterprise IT solutions for organizations that want dependable technology planning, supply, deployment, integration, and long-term support.",
     overview: [
       "Enterprise IT work often spans computers, networks, CCTV, servers, software, cloud, websites, access control, and maintenance. Managing each piece separately creates coordination problems.",
       "Microware brings 25+ years of practical experience to connect these requirements into a coherent technology environment."
@@ -294,19 +294,19 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "software-solutions-jammu",
-    title: "Software Solutions in Jammu",
-    metaTitle: "Software Solutions Jammu | Custom Software & Websites",
+    title: "Software Solutions",
+    metaTitle: "Software Solutions | Custom Software & Websites",
     metaDescription:
-      "Custom software and website solutions in Jammu for businesses needing workflow systems, reporting tools, business websites, and practical digital platforms.",
+      "Custom software and website solutions for businesses needing workflow systems, reporting tools, business websites, and practical digital platforms.",
     hero: "Custom software and websites built around real business workflows.",
     intro:
-      "Microware Communications provides software solutions in Jammu, including custom applications and professional websites for organizations that need practical digital systems.",
+      "Microware Communications provides software solutions, including custom applications and professional websites for organizations that need practical digital systems.",
     overview: [
       "Good software should reduce manual work, improve reporting, support teams, and make information easier to manage. A website should communicate clearly, build trust, and generate useful enquiries.",
       "Microware treats software and websites as mainstream technology services, backed by long practical experience in understanding how organizations actually operate."
     ],
     included: ["Custom workflow software", "Reporting and admin systems", "Business websites", "Landing pages", "Maintenance and improvements", "Integration planning"],
-    industries: ["Business offices", "Retail and service firms", "Educational institutions", "Professional practices", "Local enterprises"],
+    industries: ["Business offices", "Retail and service firms", "Educational institutions", "Professional practices", "Growing enterprises"],
     process: ["Understand workflow and goals", "Define features and content", "Plan screens, data, and user roles", "Build and review iteratively", "Launch with testing", "Improve based on real use"],
     benefits: ["Better process control", "Less manual duplication", "Professional online presence", "Improved enquiry generation", "Systems designed around your operation"],
     related: ["enterprise-it-solutions-jammu", "cloud-solutions-jammu", "computer-dealer-jammu"],
@@ -314,13 +314,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "annual-maintenance-contract-jammu",
-    title: "Annual Maintenance Contract in Jammu",
-    metaTitle: "Annual Maintenance Contract Jammu | IT AMC Services",
+    title: "Annual Maintenance Contract",
+    metaTitle: "Annual Maintenance Contract | IT AMC Services",
     metaDescription:
-      "Annual maintenance contract services in Jammu for computers, networks, CCTV, servers, and IT infrastructure support.",
+      "Annual maintenance contract services for computers, networks, CCTV, servers, and IT infrastructure support.",
     hero: "Reliable AMC support to keep business technology running.",
     intro:
-      "Microware Communications provides annual maintenance contract services in Jammu for organizations that want predictable support for computers, networks, CCTV, servers, and infrastructure.",
+      "Microware Communications provides annual maintenance contract services for organizations that want predictable support for computers, networks, CCTV, servers, and infrastructure.",
     overview: [
       "Technology needs regular care. Without preventive maintenance and a trusted support partner, small issues can become downtime, productivity loss, or security gaps.",
       "Microware structures AMC support around the customer environment, covering practical troubleshooting, checks, guidance, and continuity-focused service."
@@ -334,13 +334,13 @@ export const localServices: LocalServicePage[] = [
   },
   {
     slug: "it-infrastructure-jammu",
-    title: "IT Infrastructure in Jammu",
-    metaTitle: "IT Infrastructure Jammu | Microware Communications",
+    title: "IT Infrastructure",
+    metaTitle: "IT Infrastructure | Microware Communications",
     metaDescription:
-      "IT infrastructure services in Jammu covering computers, networking, servers, cabling, Wi-Fi, CCTV, software, and ongoing support.",
+      "IT infrastructure services covering computers, networking, servers, cabling, Wi-Fi, CCTV, software, and ongoing support.",
     hero: "End-to-end IT infrastructure for organizations that need dependable operations.",
     intro:
-      "Microware Communications plans and supports IT infrastructure in Jammu across computers, networking, servers, cabling, Wi-Fi, CCTV, software, websites, and maintenance.",
+      "Microware Communications plans and supports IT infrastructure across computers, networking, servers, cabling, Wi-Fi, CCTV, software, websites, and maintenance.",
     overview: [
       "IT infrastructure is the foundation for daily work. It includes hardware, connectivity, security, software, storage, communication, and the support processes that keep everything usable.",
       "Microware helps organizations build infrastructure in a practical sequence, avoiding unnecessary complexity while keeping future growth in mind."
@@ -348,7 +348,7 @@ export const localServices: LocalServicePage[] = [
     included: ["Infrastructure assessment", "Computer and server planning", "LAN, Wi-Fi, and cabling", "CCTV and access systems", "Software and website support", "AMC and lifecycle planning"],
     industries: ["Enterprise offices", "Government departments", "Education", "Manufacturing", "Healthcare and hospitality"],
     process: ["Assess current environment", "Identify operational gaps", "Prioritize critical systems", "Design infrastructure roadmap", "Deploy and integrate", "Maintain and improve"],
-    benefits: ["Stronger technology foundation", "Better coordination between systems", "Scalable planning", "Reduced downtime risk", "Experienced local support"],
+    benefits: ["Stronger technology foundation", "Better coordination between systems", "Scalable planning", "Reduced downtime risk", "Experienced support"],
     related: ["enterprise-it-solutions-jammu", "server-solutions-jammu", "structured-cabling-jammu"],
     faqs: serviceFaqs("IT infrastructure", "operational reliability", "Infrastructure work is usually phased according to urgency, budget, site readiness, and business continuity needs.", "Support can continue through AMC, upgrades, troubleshooting, and periodic reviews.")
   }

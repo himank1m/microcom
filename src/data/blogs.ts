@@ -21,7 +21,7 @@ export const blogPosts: BlogPost[] = [
     title: "Best CCTV Cameras for Businesses: What to Choose and Why",
     metaTitle: "Best CCTV Cameras for Businesses | Microware Communications",
     metaDescription:
-      "A practical guide to choosing CCTV cameras for offices, schools, shops, hotels, and commercial buildings in Jammu.",
+      "A practical guide to choosing CCTV cameras for offices, schools, shops, hotels, and commercial buildings.",
     excerpt:
       "Understand dome, bullet, turret, IP, night-vision, and analytics-ready CCTV cameras before investing in surveillance.",
     category: "CCTV & Surveillance",

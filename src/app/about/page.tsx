@@ -8,7 +8,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 export const metadata: Metadata = {
   title: "Why Microware",
   description:
-    "Learn why organizations choose Microware Communications, an enterprise technology solutions partner based in Jammu with over 25 years of experience.",
+    "Learn why organizations choose Microware Communications, an enterprise technology solutions partner with over 25 years of experience.",
   alternates: {
     canonical: "/about"
   }
@@ -24,13 +24,13 @@ export default function AboutPage() {
               eyebrow="About Microware"
               level="h1"
               title="Why Organizations Choose Microware"
-              description="Microware Communications is an enterprise technology solutions partner based in Jammu, delivering reliable IT, surveillance, infrastructure, and software solutions for organizations across Northern India."
+              description="Microware Communications is an enterprise technology solutions partner delivering reliable IT, surveillance, infrastructure, and software solutions for serious organizations."
             />
           </Reveal>
           <Reveal>
             <div className="space-y-5 text-base leading-8 text-muted-foreground">
               <p>
-                For more than 25 years, Microware Communications has supported organizations that need dependable technology infrastructure and a professional service environment, working with clients across Northern India.
+                For more than 25 years, Microware Communications has supported organizations that need dependable technology infrastructure and a professional service environment.
               </p>
               <p>
                 The work spans enterprise IT, CCTV, computers, surveillance, networking, servers, custom software, custom websites, managed services, and AMC support. The orientation is serious and practical: understand the environment, specify carefully, deploy with discipline, and remain available after installation.

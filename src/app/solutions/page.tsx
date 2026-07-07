@@ -11,7 +11,7 @@ import { localServices } from "@/data/localServices";
 export const metadata: Metadata = {
   title: "Solutions",
   description:
-    "Explore Microware Communications solutions including CCTV installation, computers, custom software, custom websites, enterprise networking, server solutions, managed IT services, and IT AMC services in Jammu.",
+    "Explore Microware Communications solutions including CCTV installation, computers, custom software, custom websites, enterprise networking, server solutions, managed IT services, and IT AMC services.",
   alternates: {
     canonical: "/solutions"
   }
@@ -37,7 +37,7 @@ export default function SolutionsPage() {
         <div className="container">
           <Reveal>
             <SectionHeading
-              eyebrow="Services in Jammu"
+              eyebrow="Service expertise"
               title="Explore Microware services in detail."
               description="Find focused information for computers, CCTV, networking, software, websites, cabling, servers, cloud, security, and AMC support."
             />
