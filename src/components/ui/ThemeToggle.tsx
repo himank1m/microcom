@@ -7,8 +7,8 @@ export function ThemeToggle() {
       title="Toggle theme"
       data-theme-toggle
     >
-      <span className="theme-icon-sun dark:hidden" aria-hidden />
-      <span className="theme-icon-moon hidden dark:block" aria-hidden />
+      <span className="theme-icon-sun" aria-hidden />
+      <span className="theme-icon-moon" aria-hidden />
     </button>
   );
 }
