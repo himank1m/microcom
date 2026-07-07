@@ -6,9 +6,9 @@ import { site } from "@/lib/utils";
 
 const navItems = [
   { href: "/", label: "Home" },
+  { href: "/about", label: "About" },
   { href: "/solutions", label: "Solutions" },
   { href: "/industries", label: "Industries" },
-  { href: "/about", label: "About" },
   { href: "/partners", label: "Partners" },
   { href: "/contact", label: "Contact" }
 ];
